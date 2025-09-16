@@ -1,0 +1,39 @@
+[gd_scene load_steps=6 format=3 uid="uid://b2xoxb8j7jsi2"]
+
+[ext_resource type="FontFile" uid="uid://gxaay18gq5gb" path="res://Fonts/pixelFont-7-8x14-sproutLands.ttf" id="1_0k2dk"]
+[ext_resource type="Texture2D" uid="uid://dkrg8rdkob273" path="res://UI/assets/UI_dark/Button/none_border/panel-border-001.png" id="2_0xkaa"]
+[ext_resource type="Texture2D" uid="uid://45o5fjkx8snv" path="res://UI/assets/UI_dark/Button/none_border/panel-border-008.png" id="3_5siy5"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hb35y"]
+texture = ExtResource("2_0xkaa")
+texture_margin_left = 8.0
+texture_margin_top = 10.0
+texture_margin_right = 10.0
+texture_margin_bottom = 10.0
+region_rect = Rect2(15, 12, 18, 15)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gevs8"]
+texture = ExtResource("3_5siy5")
+texture_margin_left = 8.0
+texture_margin_top = 8.0
+texture_margin_right = 8.0
+texture_margin_bottom = 8.0
+region_rect = Rect2(0, 0, 48, 48)
+
+[node name="Button" type="Button"]
+custom_minimum_size = Vector2(300, 60)
+size_flags_horizontal = 4
+size_flags_vertical = 0
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("1_0k2dk")
+theme_override_font_sizes/font_size = 36
+theme_override_styles/focus = SubResource("StyleBoxTexture_hb35y")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_gevs8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_gevs8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_gevs8")
+theme_override_styles/normal = SubResource("StyleBoxTexture_hb35y")
+text = "Start Game"

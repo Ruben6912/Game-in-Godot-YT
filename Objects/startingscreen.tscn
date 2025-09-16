@@ -1,0 +1,98 @@
+[gd_scene load_steps=6 format=3 uid="uid://dtsqfp6qkvbd8"]
+
+[ext_resource type="Texture2D" uid="uid://bl3ofbg1jr2lc" path="res://UI/assets/Backgroundbox.png" id="2_y1i1l"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_kbai3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_27ieu"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+bg_color = Color(0.239216, 0.231373, 0.227451, 1)
+border_width_bottom = 2
+border_color = Color(0.12549, 0.12549, 0.121569, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_8mryl"]
+content_margin_left = 4.0
+content_margin_top = 2.0
+content_margin_right = 4.0
+bg_color = Color(0.239216, 0.231373, 0.227451, 1)
+border_width_bottom = 4
+border_color = Color(0.12549, 0.12549, 0.121569, 1)
+border_blend = true
+corner_radius_top_left = 4
+corner_radius_top_right = 4
+corner_radius_bottom_right = 4
+corner_radius_bottom_left = 4
+shadow_size = 2
+
+[sub_resource type="Theme" id="Theme_d67c0"]
+Button/styles/focus = SubResource("StyleBoxEmpty_kbai3")
+Button/styles/hover = SubResource("StyleBoxFlat_27ieu")
+Button/styles/normal = SubResource("StyleBoxFlat_8mryl")
+
+[node name="Startingscreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = SubResource("Theme_d67c0")
+
+[node name="NinePatchRect" type="NinePatchRect" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -51.5
+offset_top = -48.0
+offset_right = 51.5
+offset_bottom = 48.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("2_y1i1l")
+region_rect = Rect2(0, 0, 64, 64)
+patch_margin_left = 6
+patch_margin_top = 6
+patch_margin_right = 6
+patch_margin_bottom = 6
+axis_stretch_horizontal = 2
+axis_stretch_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="NinePatchRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -20.0
+offset_top = -20.0
+offset_right = 20.0
+offset_bottom = 20.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Start Game" type="Button" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+text = "Start"
+
+[node name="Settings" type="Button" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+text = "Settings"
+
+[node name="Test" type="Button" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+text = "Test"
+
+[node name="Exit Game" type="Button" parent="NinePatchRect/VBoxContainer"]
+layout_mode = 2
+text = "Exit"

@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://c2o8bf5tkqlge"]
+
+[sub_resource type="GDScript" id="GDScript_km2ny"]
+
+[node name="HSlider" type="HSlider"]
+custom_minimum_size = Vector2(750, 0)
+offset_right = 8.0
+offset_bottom = 16.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+max_value = 1.0
+step = 0.01
+script = SubResource("GDScript_km2ny")
