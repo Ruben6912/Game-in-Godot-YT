@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://uomd2v331crt"]
+
+[ext_resource type="Texture2D" uid="uid://cqn8pfdvhhwp1" path="res://Assets/icon.svg" id="1_h6o0q"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f8nxq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_h6o0q")
+}],
+"loop": true,
+"name": &"Gun",
+"speed": 5.0
+}]
+
+[node name="Gun" type="Node2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(0.0625, 0.0185547)
+sprite_frames = SubResource("SpriteFrames_f8nxq")
+animation = &"Gun"
