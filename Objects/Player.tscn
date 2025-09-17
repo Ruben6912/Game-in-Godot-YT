@@ -1,3 +1,85 @@
-[gd_scene format=3 uid="uid://ygoauv1qpre3"]
+[gd_scene load_steps=11 format=3 uid="uid://ygoauv1qpre3"]
 
-[node name="Node2D" type="Node2D"]
+[ext_resource type="PackedScene" uid="uid://baj721kpytavn" path="res://Objects/Entity/Entity.tscn" id="1_g43kd"]
+[ext_resource type="Texture2D" uid="uid://bhrw6ob5kkjqu" path="res://Assets/Test_assets/Test bean.png" id="2_c44yo"]
+[ext_resource type="Script" path="res://Scripts/CharakterScript.gd" id="2_o7c0r"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ro03"]
+radius = 4.0
+height = 12.0
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pshh7"]
+atlas = ExtResource("2_c44yo")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mp7a3"]
+atlas = ExtResource("2_c44yo")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jrp0"]
+atlas = ExtResource("2_c44yo")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2plbe"]
+atlas = ExtResource("2_c44yo")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2d7qk"]
+atlas = ExtResource("2_c44yo")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_wwkt5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pshh7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mp7a3")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jrp0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2plbe")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2d7qk")
+}],
+"loop": true,
+"name": &"Slide",
+"speed": 5.0
+}]
+
+[node name="Charakter" type="Node2D"]
+
+[node name="Charakter" parent="." instance=ExtResource("1_g43kd")]
+
+[node name="CharacterBody2D" parent="Charakter" index="0"]
+script = ExtResource("2_o7c0r")
+max_health = 3
+health = 3
+speed = 167.0
+
+[node name="CollisionShape2D" parent="Charakter/CharacterBody2D" index="0"]
+position = Vector2(0, 2)
+shape = SubResource("CapsuleShape2D_2ro03")
+
+[node name="AnimatedSprite2D" parent="Charakter/CharacterBody2D" index="1"]
+sprite_frames = SubResource("SpriteFrames_wwkt5")
+autoplay = "Idle"
+
+[node name="Camera2D" type="Camera2D" parent="Charakter/CharacterBody2D" index="2"]
+zoom = Vector2(5, 5)
+
+[editable path="Charakter"]

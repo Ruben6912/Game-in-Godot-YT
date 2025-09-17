@@ -1,17 +1,17 @@
 [gd_scene load_steps=28 format=3 uid="uid://cgqd0esbno2bq"]
 
-[ext_resource type="Texture2D" uid="uid://dcanj0joh3p2l" path="res://UI/assets/ALL UI ASSETS on one sheet.png" id="1_5pa2v"]
-[ext_resource type="Script" path="res://Scripts/popup_menu.gd" id="1_tce4i"]
-[ext_resource type="FontFile" uid="uid://gxaay18gq5gb" path="res://Fonts/pixelFont-7-8x14-sproutLands.ttf" id="2_bqx8j"]
-[ext_resource type="Texture2D" uid="uid://ba48gp38cqu7a" path="res://UI/assets/keyboard_arrows_none.png" id="3_oue8s"]
-[ext_resource type="Texture2D" uid="uid://b88jpur17l3gi" path="res://UI/assets/controller_generic.png" id="4_6bpcw"]
-[ext_resource type="StyleBox" uid="uid://tqandjxws4es" path="res://UI/Themes and Styleboxes/NormalButton_Hover.tres" id="5_1sjtx"]
-[ext_resource type="Texture2D" uid="uid://d3x2ahk2es2qf" path="res://UI/assets/controller_switch_pro.png" id="5_to5h3"]
-[ext_resource type="StyleBox" uid="uid://c10h6oetakmfd" path="res://UI/Themes and Styleboxes/NormalButton_pressed.tres" id="6_t4c4u"]
-[ext_resource type="StyleBox" uid="uid://68k3sj3omxvq" path="res://UI/Themes and Styleboxes/NormalButton.tres" id="7_e524h"]
+[ext_resource type="Script" path="res://Scripts/popup_menu.gd" id="1_umew6"]
+[ext_resource type="Texture2D" uid="uid://dcanj0joh3p2l" path="res://UI/assets/ALL UI ASSETS on one sheet.png" id="2_4uvec"]
+[ext_resource type="Texture2D" uid="uid://ba48gp38cqu7a" path="res://UI/assets/keyboard_arrows_none.png" id="3_77stw"]
+[ext_resource type="Texture2D" uid="uid://b88jpur17l3gi" path="res://UI/assets/controller_generic.png" id="4_es8kg"]
+[ext_resource type="StyleBox" uid="uid://tqandjxws4es" path="res://UI/Themes and Styleboxes/NormalButton_Hover.tres" id="5_ghnea"]
+[ext_resource type="StyleBox" uid="uid://c10h6oetakmfd" path="res://UI/Themes and Styleboxes/NormalButton_pressed.tres" id="6_o2jt1"]
+[ext_resource type="StyleBox" uid="uid://68k3sj3omxvq" path="res://UI/Themes and Styleboxes/NormalButton.tres" id="7_uhksw"]
+[ext_resource type="Texture2D" uid="uid://d3x2ahk2es2qf" path="res://UI/assets/controller_switch_pro.png" id="8_telns"]
+[ext_resource type="FontFile" uid="uid://gxaay18gq5gb" path="res://Fonts/pixelFont-7-8x14-sproutLands.ttf" id="9_w683a"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6mr5q"]
-texture = ExtResource("1_5pa2v")
+texture = ExtResource("2_4uvec")
 texture_margin_left = 6.0
 texture_margin_top = 6.0
 texture_margin_right = 6.0
@@ -19,7 +19,7 @@ texture_margin_bottom = 6.0
 region_rect = Rect2(855, 40, 18, 17)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_a7l2p"]
-texture = ExtResource("1_5pa2v")
+texture = ExtResource("2_4uvec")
 texture_margin_left = 6.0
 texture_margin_top = 6.0
 texture_margin_right = 6.0
@@ -27,7 +27,7 @@ texture_margin_bottom = 8.0
 region_rect = Rect2(823, 38, 18, 19)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_4it6c"]
-texture = ExtResource("1_5pa2v")
+texture = ExtResource("2_4uvec")
 texture_margin_left = 6.0
 texture_margin_top = 6.0
 texture_margin_right = 6.0
@@ -35,7 +35,7 @@ texture_margin_bottom = 9.0
 region_rect = Rect2(791, 37, 18, 20)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_xku2t"]
-texture = ExtResource("1_5pa2v")
+texture = ExtResource("2_4uvec")
 texture_margin_left = 6.0
 texture_margin_top = 6.0
 texture_margin_right = 6.0
@@ -43,7 +43,7 @@ texture_margin_bottom = 6.0
 region_rect = Rect2(855, 40, 18, 17)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_g71ff"]
-texture = ExtResource("1_5pa2v")
+texture = ExtResource("2_4uvec")
 texture_margin_left = 12.0
 texture_margin_top = 11.0
 texture_margin_right = 12.0
@@ -51,7 +51,7 @@ texture_margin_bottom = 14.0
 region_rect = Rect2(791, 37, 18, 20)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_gqjga"]
-texture = ExtResource("1_5pa2v")
+texture = ExtResource("2_4uvec")
 texture_margin_left = 4.0
 texture_margin_top = 4.0
 texture_margin_right = 4.0
@@ -59,7 +59,7 @@ texture_margin_bottom = 6.0
 region_rect = Rect2(371, 306, 90, 27)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_hiuxp"]
-texture = ExtResource("1_5pa2v")
+texture = ExtResource("2_4uvec")
 texture_margin_left = 4.0
 texture_margin_top = 4.0
 texture_margin_right = 4.0
@@ -67,7 +67,7 @@ texture_margin_bottom = 4.0
 region_rect = Rect2(467, 308, 90, 25)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_l22s5"]
-texture = ExtResource("1_5pa2v")
+texture = ExtResource("2_4uvec")
 texture_margin_left = 1.0
 texture_margin_top = 1.0
 texture_margin_right = 1.0
@@ -75,43 +75,43 @@ texture_margin_bottom = 1.0
 region_rect = Rect2(322, 486, 12, 4)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_djtve"]
-texture = ExtResource("1_5pa2v")
+texture = ExtResource("2_4uvec")
 region_rect = Rect2(213, 438, 22, 22)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ixuej"]
-texture = ExtResource("1_5pa2v")
+texture = ExtResource("2_4uvec")
 region_rect = Rect2(181, 436, 22, 24)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_uw2it"]
-texture = ExtResource("1_5pa2v")
+texture = ExtResource("2_4uvec")
 region_rect = Rect2(213, 374, 22, 22)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_604ep"]
-texture = ExtResource("1_5pa2v")
+texture = ExtResource("2_4uvec")
 region_rect = Rect2(181, 372, 22, 24)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_al5rk"]
-texture = ExtResource("1_5pa2v")
+texture = ExtResource("2_4uvec")
 region_rect = Rect2(149, 406, 22, 22)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_oim87"]
-texture = ExtResource("1_5pa2v")
+texture = ExtResource("2_4uvec")
 region_rect = Rect2(117, 404, 22, 24)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_6fo3v"]
-texture = ExtResource("1_5pa2v")
+texture = ExtResource("2_4uvec")
 region_rect = Rect2(149, 630, 22, 22)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tt0fw"]
-texture = ExtResource("1_5pa2v")
+texture = ExtResource("2_4uvec")
 region_rect = Rect2(117, 628, 22, 24)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_qokpk"]
-texture = ExtResource("1_5pa2v")
+texture = ExtResource("2_4uvec")
 region_rect = Rect2(279, 311, 18, 18)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_eh7k1"]
-texture = ExtResource("1_5pa2v")
+texture = ExtResource("2_4uvec")
 region_rect = Rect2(117, 596, 22, 24)
 
 [node name="InGameUI" type="Control"]
@@ -129,7 +129,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_tce4i")
+script = ExtResource("1_umew6")
 Startingscreen = NodePath("StartingScreen")
 GameMenuScreen = NodePath("StartingGameMenuScreen")
 SettingsMenuScreen = NodePath("SettingMenuScreen")
@@ -146,7 +146,7 @@ size_flags_vertical = 4
 
 [node name="Outline" type="NinePatchRect" parent="PopupMenu/StartingScreen"]
 layout_mode = 2
-texture = ExtResource("1_5pa2v")
+texture = ExtResource("2_4uvec")
 region_rect = Rect2(587, 92, 58, 57)
 patch_margin_left = 18
 patch_margin_top = 16
@@ -167,7 +167,7 @@ theme_override_constants/margin_bottom = 17
 
 [node name="Fill" type="NinePatchRect" parent="PopupMenu/StartingScreen/Outline/MarginContainer"]
 layout_mode = 2
-texture = ExtResource("1_5pa2v")
+texture = ExtResource("2_4uvec")
 region_rect = Rect2(390, 422, 2, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PopupMenu/StartingScreen/Outline/MarginContainer/Fill"]
@@ -263,7 +263,7 @@ size_flags_vertical = 4
 
 [node name="Outline" type="NinePatchRect" parent="PopupMenu/StartingGameMenuScreen"]
 layout_mode = 2
-texture = ExtResource("1_5pa2v")
+texture = ExtResource("2_4uvec")
 region_rect = Rect2(587, 92, 58, 57)
 patch_margin_left = 18
 patch_margin_top = 16
@@ -284,7 +284,7 @@ theme_override_constants/margin_bottom = 17
 
 [node name="Fill" type="NinePatchRect" parent="PopupMenu/StartingGameMenuScreen/Outline/MarginContainer"]
 layout_mode = 2
-texture = ExtResource("1_5pa2v")
+texture = ExtResource("2_4uvec")
 region_rect = Rect2(390, 422, 2, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PopupMenu/StartingGameMenuScreen/Outline/MarginContainer/Fill"]
@@ -392,7 +392,7 @@ size_flags_vertical = 4
 
 [node name="Outline" type="NinePatchRect" parent="PopupMenu/SettingMenuScreen"]
 layout_mode = 2
-texture = ExtResource("1_5pa2v")
+texture = ExtResource("2_4uvec")
 region_rect = Rect2(587, 92, 58, 57)
 patch_margin_left = 18
 patch_margin_top = 16
@@ -413,7 +413,7 @@ theme_override_constants/margin_bottom = 17
 
 [node name="Fill" type="NinePatchRect" parent="PopupMenu/SettingMenuScreen/Outline/MarginContainer"]
 layout_mode = 2
-texture = ExtResource("1_5pa2v")
+texture = ExtResource("2_4uvec")
 region_rect = Rect2(390, 422, 2, 1)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PopupMenu/SettingMenuScreen/Outline/MarginContainer/Fill"]
@@ -525,7 +525,7 @@ layout_mode = 2
 
 [node name="Outline" type="NinePatchRect" parent="PopupMenu/Setting_GameMenu_MenuScreen"]
 layout_mode = 2
-texture = ExtResource("1_5pa2v")
+texture = ExtResource("2_4uvec")
 region_rect = Rect2(587, 92, 58, 57)
 patch_margin_left = 18
 patch_margin_top = 16
@@ -546,7 +546,7 @@ theme_override_constants/margin_bottom = 17
 
 [node name="Fill" type="NinePatchRect" parent="PopupMenu/Setting_GameMenu_MenuScreen/Outline/MarginContainer"]
 layout_mode = 2
-texture = ExtResource("1_5pa2v")
+texture = ExtResource("2_4uvec")
 region_rect = Rect2(390, 422, 2, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="PopupMenu/Setting_GameMenu_MenuScreen/Outline/MarginContainer/Fill"]
@@ -597,7 +597,7 @@ layout_mode = 2
 
 [node name="Outline" type="NinePatchRect" parent="PopupMenu/Setting_VideoMenu_MenuScreen"]
 layout_mode = 2
-texture = ExtResource("1_5pa2v")
+texture = ExtResource("2_4uvec")
 region_rect = Rect2(587, 92, 58, 57)
 patch_margin_left = 18
 patch_margin_top = 16
@@ -618,7 +618,7 @@ theme_override_constants/margin_bottom = 17
 
 [node name="Fill" type="NinePatchRect" parent="PopupMenu/Setting_VideoMenu_MenuScreen/Outline/MarginContainer"]
 layout_mode = 2
-texture = ExtResource("1_5pa2v")
+texture = ExtResource("2_4uvec")
 region_rect = Rect2(390, 422, 2, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="PopupMenu/Setting_VideoMenu_MenuScreen/Outline/MarginContainer/Fill"]
@@ -669,7 +669,7 @@ layout_mode = 2
 
 [node name="Outline" type="NinePatchRect" parent="PopupMenu/Setting_AudioMenu_MenuScreen"]
 layout_mode = 2
-texture = ExtResource("1_5pa2v")
+texture = ExtResource("2_4uvec")
 region_rect = Rect2(587, 92, 58, 57)
 patch_margin_left = 18
 patch_margin_top = 16
@@ -690,7 +690,7 @@ theme_override_constants/margin_bottom = 17
 
 [node name="Fill" type="NinePatchRect" parent="PopupMenu/Setting_AudioMenu_MenuScreen/Outline/MarginContainer"]
 layout_mode = 2
-texture = ExtResource("1_5pa2v")
+texture = ExtResource("2_4uvec")
 region_rect = Rect2(390, 422, 2, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="PopupMenu/Setting_AudioMenu_MenuScreen/Outline/MarginContainer/Fill"]
@@ -741,7 +741,7 @@ layout_mode = 2
 
 [node name="Outline" type="NinePatchRect" parent="PopupMenu/Setting_ControllMenu_MenuScreen"]
 layout_mode = 2
-texture = ExtResource("1_5pa2v")
+texture = ExtResource("2_4uvec")
 region_rect = Rect2(587, 92, 58, 57)
 patch_margin_left = 18
 patch_margin_top = 16
@@ -762,7 +762,7 @@ theme_override_constants/margin_bottom = 17
 
 [node name="Fill" type="NinePatchRect" parent="PopupMenu/Setting_ControllMenu_MenuScreen/Outline/MarginContainer"]
 layout_mode = 2
-texture = ExtResource("1_5pa2v")
+texture = ExtResource("2_4uvec")
 region_rect = Rect2(390, 422, 2, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="PopupMenu/Setting_ControllMenu_MenuScreen/Outline/MarginContainer/Fill"]
@@ -847,7 +847,7 @@ theme_override_constants/margin_bottom = 10
 
 [node name="NinePatchRect" type="NinePatchRect" parent="PopupMenu/Setting_ControllMenu_MenuScreen/Outline/MarginContainer/Fill/MarginContainer/VBoxContainer/HBoxContainer/KeyboardButton/MarginContainer"]
 layout_mode = 2
-texture = ExtResource("3_oue8s")
+texture = ExtResource("3_77stw")
 
 [node name="Control2" type="Control" parent="PopupMenu/Setting_ControllMenu_MenuScreen/Outline/MarginContainer/Fill/MarginContainer/VBoxContainer/HBoxContainer"]
 custom_minimum_size = Vector2(180, 0)
@@ -877,7 +877,7 @@ theme_override_constants/margin_bottom = 10
 
 [node name="NinePatchRect" type="NinePatchRect" parent="PopupMenu/Setting_ControllMenu_MenuScreen/Outline/MarginContainer/Fill/MarginContainer/VBoxContainer/HBoxContainer/ControllerButton/MarginContainer"]
 layout_mode = 2
-texture = ExtResource("4_6bpcw")
+texture = ExtResource("4_es8kg")
 region_rect = Rect2(0, 0, 64, 64)
 
 [node name="Setting_ControllMenu_Controller_MenuScreen" type="MarginContainer" parent="PopupMenu"]
@@ -886,7 +886,7 @@ layout_mode = 2
 
 [node name="Outline" type="NinePatchRect" parent="PopupMenu/Setting_ControllMenu_Controller_MenuScreen"]
 layout_mode = 2
-texture = ExtResource("1_5pa2v")
+texture = ExtResource("2_4uvec")
 region_rect = Rect2(587, 92, 58, 57)
 patch_margin_left = 18
 patch_margin_top = 16
@@ -907,7 +907,7 @@ theme_override_constants/margin_bottom = 17
 
 [node name="Fill" type="NinePatchRect" parent="PopupMenu/Setting_ControllMenu_Controller_MenuScreen/Outline/MarginContainer"]
 layout_mode = 2
-texture = ExtResource("1_5pa2v")
+texture = ExtResource("2_4uvec")
 region_rect = Rect2(390, 422, 2, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="PopupMenu/Setting_ControllMenu_Controller_MenuScreen/Outline/MarginContainer/Fill"]
@@ -960,11 +960,11 @@ theme_override_colors/font_pressed_color = Color(0.572549, 0.4, 0.282353, 1)
 theme_override_colors/font_focus_color = Color(0.713726, 0.537255, 0.384314, 1)
 theme_override_colors/font_color = Color(0.713726, 0.537255, 0.384314, 1)
 theme_override_font_sizes/font_size = 28
-theme_override_styles/focus = ExtResource("5_1sjtx")
-theme_override_styles/hover_pressed = ExtResource("6_t4c4u")
-theme_override_styles/hover = ExtResource("5_1sjtx")
-theme_override_styles/pressed = ExtResource("6_t4c4u")
-theme_override_styles/normal = ExtResource("7_e524h")
+theme_override_styles/focus = ExtResource("5_ghnea")
+theme_override_styles/hover_pressed = ExtResource("6_o2jt1")
+theme_override_styles/hover = ExtResource("5_ghnea")
+theme_override_styles/pressed = ExtResource("6_o2jt1")
+theme_override_styles/normal = ExtResource("7_uhksw")
 text = "Steam Controller"
 
 [node name="Control" type="Control" parent="PopupMenu/Setting_ControllMenu_Controller_MenuScreen/Outline/MarginContainer/Fill/MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer2"]
@@ -980,11 +980,11 @@ theme_override_colors/font_pressed_color = Color(0.572549, 0.4, 0.282353, 1)
 theme_override_colors/font_focus_color = Color(0.713726, 0.537255, 0.384314, 1)
 theme_override_colors/font_color = Color(0.713726, 0.537255, 0.384314, 1)
 theme_override_font_sizes/font_size = 28
-theme_override_styles/focus = ExtResource("5_1sjtx")
-theme_override_styles/hover_pressed = ExtResource("6_t4c4u")
-theme_override_styles/hover = ExtResource("5_1sjtx")
-theme_override_styles/pressed = ExtResource("6_t4c4u")
-theme_override_styles/normal = ExtResource("7_e524h")
+theme_override_styles/focus = ExtResource("5_ghnea")
+theme_override_styles/hover_pressed = ExtResource("6_o2jt1")
+theme_override_styles/hover = ExtResource("5_ghnea")
+theme_override_styles/pressed = ExtResource("6_o2jt1")
+theme_override_styles/normal = ExtResource("7_uhksw")
 text = "Switch Controller"
 
 [node name="Control2" type="Control" parent="PopupMenu/Setting_ControllMenu_Controller_MenuScreen/Outline/MarginContainer/Fill/MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer2"]
@@ -1000,11 +1000,11 @@ theme_override_colors/font_pressed_color = Color(0.572549, 0.4, 0.282353, 1)
 theme_override_colors/font_focus_color = Color(0.713726, 0.537255, 0.384314, 1)
 theme_override_colors/font_color = Color(0.713726, 0.537255, 0.384314, 1)
 theme_override_font_sizes/font_size = 28
-theme_override_styles/focus = ExtResource("5_1sjtx")
-theme_override_styles/hover_pressed = ExtResource("6_t4c4u")
-theme_override_styles/hover = ExtResource("5_1sjtx")
-theme_override_styles/pressed = ExtResource("6_t4c4u")
-theme_override_styles/normal = ExtResource("7_e524h")
+theme_override_styles/focus = ExtResource("5_ghnea")
+theme_override_styles/hover_pressed = ExtResource("6_o2jt1")
+theme_override_styles/hover = ExtResource("5_ghnea")
+theme_override_styles/pressed = ExtResource("6_o2jt1")
+theme_override_styles/normal = ExtResource("7_uhksw")
 text = "Xbox Controller"
 
 [node name="Control3" type="Control" parent="PopupMenu/Setting_ControllMenu_Controller_MenuScreen/Outline/MarginContainer/Fill/MarginContainer/VBoxContainer/HBoxContainer/HBoxContainer2"]
@@ -1020,11 +1020,11 @@ theme_override_colors/font_pressed_color = Color(0.572549, 0.4, 0.282353, 1)
 theme_override_colors/font_focus_color = Color(0.713726, 0.537255, 0.384314, 1)
 theme_override_colors/font_color = Color(0.713726, 0.537255, 0.384314, 1)
 theme_override_font_sizes/font_size = 28
-theme_override_styles/focus = ExtResource("5_1sjtx")
-theme_override_styles/hover_pressed = ExtResource("6_t4c4u")
-theme_override_styles/hover = ExtResource("5_1sjtx")
-theme_override_styles/pressed = ExtResource("6_t4c4u")
-theme_override_styles/normal = ExtResource("7_e524h")
+theme_override_styles/focus = ExtResource("5_ghnea")
+theme_override_styles/hover_pressed = ExtResource("6_o2jt1")
+theme_override_styles/hover = ExtResource("5_ghnea")
+theme_override_styles/pressed = ExtResource("6_o2jt1")
+theme_override_styles/normal = ExtResource("7_uhksw")
 text = "PS Controller"
 
 [node name="Control" type="Control" parent="PopupMenu/Setting_ControllMenu_Controller_MenuScreen/Outline/MarginContainer/Fill/MarginContainer/VBoxContainer"]
@@ -1038,7 +1038,7 @@ custom_minimum_size = Vector2(250, 250)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("5_to5h3")
+texture = ExtResource("8_telns")
 
 [node name="Setting_ControllMenu_Keyboard_MenuScreen" type="MarginContainer" parent="PopupMenu"]
 visible = false
@@ -1046,7 +1046,7 @@ layout_mode = 2
 
 [node name="Outline" type="NinePatchRect" parent="PopupMenu/Setting_ControllMenu_Keyboard_MenuScreen"]
 layout_mode = 2
-texture = ExtResource("1_5pa2v")
+texture = ExtResource("2_4uvec")
 region_rect = Rect2(587, 92, 58, 57)
 patch_margin_left = 18
 patch_margin_top = 16
@@ -1067,7 +1067,7 @@ theme_override_constants/margin_bottom = 17
 
 [node name="Fill" type="NinePatchRect" parent="PopupMenu/Setting_ControllMenu_Keyboard_MenuScreen/Outline/MarginContainer"]
 layout_mode = 2
-texture = ExtResource("1_5pa2v")
+texture = ExtResource("2_4uvec")
 region_rect = Rect2(390, 422, 2, 1)
 
 [node name="MarginContainer" type="MarginContainer" parent="PopupMenu/Setting_ControllMenu_Keyboard_MenuScreen/Outline/MarginContainer/Fill"]
@@ -1128,11 +1128,11 @@ theme_override_colors/font_pressed_color = Color(0.572549, 0.4, 0.282353, 1)
 theme_override_colors/font_focus_color = Color(0.713726, 0.537255, 0.384314, 1)
 theme_override_colors/font_color = Color(0.713726, 0.537255, 0.384314, 1)
 theme_override_font_sizes/font_size = 28
-theme_override_styles/focus = ExtResource("5_1sjtx")
-theme_override_styles/hover_pressed = ExtResource("6_t4c4u")
-theme_override_styles/hover = ExtResource("5_1sjtx")
-theme_override_styles/pressed = ExtResource("6_t4c4u")
-theme_override_styles/normal = ExtResource("7_e524h")
+theme_override_styles/focus = ExtResource("5_ghnea")
+theme_override_styles/hover_pressed = ExtResource("6_o2jt1")
+theme_override_styles/hover = ExtResource("5_ghnea")
+theme_override_styles/pressed = ExtResource("6_o2jt1")
+theme_override_styles/normal = ExtResource("7_uhksw")
 text = "W"
 
 [node name="Label" type="Label" parent="PopupMenu/Setting_ControllMenu_Keyboard_MenuScreen/Outline/MarginContainer/Fill/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/HBoxContainer2"]
@@ -1161,11 +1161,11 @@ theme_override_colors/font_pressed_color = Color(0.572549, 0.4, 0.282353, 1)
 theme_override_colors/font_focus_color = Color(0.713726, 0.537255, 0.384314, 1)
 theme_override_colors/font_color = Color(0.713726, 0.537255, 0.384314, 1)
 theme_override_font_sizes/font_size = 28
-theme_override_styles/focus = ExtResource("5_1sjtx")
-theme_override_styles/hover_pressed = ExtResource("6_t4c4u")
-theme_override_styles/hover = ExtResource("5_1sjtx")
-theme_override_styles/pressed = ExtResource("6_t4c4u")
-theme_override_styles/normal = ExtResource("7_e524h")
+theme_override_styles/focus = ExtResource("5_ghnea")
+theme_override_styles/hover_pressed = ExtResource("6_o2jt1")
+theme_override_styles/hover = ExtResource("5_ghnea")
+theme_override_styles/pressed = ExtResource("6_o2jt1")
+theme_override_styles/normal = ExtResource("7_uhksw")
 text = "Esc"
 
 [node name="Label" type="Label" parent="PopupMenu/Setting_ControllMenu_Keyboard_MenuScreen/Outline/MarginContainer/Fill/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer/HBoxContainer3/HBoxContainer2"]
@@ -1195,11 +1195,11 @@ theme_override_colors/font_pressed_color = Color(0.572549, 0.4, 0.282353, 1)
 theme_override_colors/font_focus_color = Color(0.713726, 0.537255, 0.384314, 1)
 theme_override_colors/font_color = Color(0.713726, 0.537255, 0.384314, 1)
 theme_override_font_sizes/font_size = 28
-theme_override_styles/focus = ExtResource("5_1sjtx")
-theme_override_styles/hover_pressed = ExtResource("6_t4c4u")
-theme_override_styles/hover = ExtResource("5_1sjtx")
-theme_override_styles/pressed = ExtResource("6_t4c4u")
-theme_override_styles/normal = ExtResource("7_e524h")
+theme_override_styles/focus = ExtResource("5_ghnea")
+theme_override_styles/hover_pressed = ExtResource("6_o2jt1")
+theme_override_styles/hover = ExtResource("5_ghnea")
+theme_override_styles/pressed = ExtResource("6_o2jt1")
+theme_override_styles/normal = ExtResource("7_uhksw")
 text = "S"
 
 [node name="Label" type="Label" parent="PopupMenu/Setting_ControllMenu_Keyboard_MenuScreen/Outline/MarginContainer/Fill/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2/HBoxContainer2"]
@@ -1228,11 +1228,11 @@ theme_override_colors/font_pressed_color = Color(0.572549, 0.4, 0.282353, 1)
 theme_override_colors/font_focus_color = Color(0.713726, 0.537255, 0.384314, 1)
 theme_override_colors/font_color = Color(0.713726, 0.537255, 0.384314, 1)
 theme_override_font_sizes/font_size = 28
-theme_override_styles/focus = ExtResource("5_1sjtx")
-theme_override_styles/hover_pressed = ExtResource("6_t4c4u")
-theme_override_styles/hover = ExtResource("5_1sjtx")
-theme_override_styles/pressed = ExtResource("6_t4c4u")
-theme_override_styles/normal = ExtResource("7_e524h")
+theme_override_styles/focus = ExtResource("5_ghnea")
+theme_override_styles/hover_pressed = ExtResource("6_o2jt1")
+theme_override_styles/hover = ExtResource("5_ghnea")
+theme_override_styles/pressed = ExtResource("6_o2jt1")
+theme_override_styles/normal = ExtResource("7_uhksw")
 text = "M"
 
 [node name="Label" type="Label" parent="PopupMenu/Setting_ControllMenu_Keyboard_MenuScreen/Outline/MarginContainer/Fill/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer2/HBoxContainer3/HBoxContainer2"]
@@ -1262,11 +1262,11 @@ theme_override_colors/font_pressed_color = Color(0.572549, 0.4, 0.282353, 1)
 theme_override_colors/font_focus_color = Color(0.713726, 0.537255, 0.384314, 1)
 theme_override_colors/font_color = Color(0.713726, 0.537255, 0.384314, 1)
 theme_override_font_sizes/font_size = 28
-theme_override_styles/focus = ExtResource("5_1sjtx")
-theme_override_styles/hover_pressed = ExtResource("6_t4c4u")
-theme_override_styles/hover = ExtResource("5_1sjtx")
-theme_override_styles/pressed = ExtResource("6_t4c4u")
-theme_override_styles/normal = ExtResource("7_e524h")
+theme_override_styles/focus = ExtResource("5_ghnea")
+theme_override_styles/hover_pressed = ExtResource("6_o2jt1")
+theme_override_styles/hover = ExtResource("5_ghnea")
+theme_override_styles/pressed = ExtResource("6_o2jt1")
+theme_override_styles/normal = ExtResource("7_uhksw")
 text = "A"
 
 [node name="Label" type="Label" parent="PopupMenu/Setting_ControllMenu_Keyboard_MenuScreen/Outline/MarginContainer/Fill/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer3/HBoxContainer2"]
@@ -1295,11 +1295,11 @@ theme_override_colors/font_pressed_color = Color(0.572549, 0.4, 0.282353, 1)
 theme_override_colors/font_focus_color = Color(0.713726, 0.537255, 0.384314, 1)
 theme_override_colors/font_color = Color(0.713726, 0.537255, 0.384314, 1)
 theme_override_font_sizes/font_size = 28
-theme_override_styles/focus = ExtResource("5_1sjtx")
-theme_override_styles/hover_pressed = ExtResource("6_t4c4u")
-theme_override_styles/hover = ExtResource("5_1sjtx")
-theme_override_styles/pressed = ExtResource("6_t4c4u")
-theme_override_styles/normal = ExtResource("7_e524h")
+theme_override_styles/focus = ExtResource("5_ghnea")
+theme_override_styles/hover_pressed = ExtResource("6_o2jt1")
+theme_override_styles/hover = ExtResource("5_ghnea")
+theme_override_styles/pressed = ExtResource("6_o2jt1")
+theme_override_styles/normal = ExtResource("7_uhksw")
 text = "1"
 
 [node name="Label" type="Label" parent="PopupMenu/Setting_ControllMenu_Keyboard_MenuScreen/Outline/MarginContainer/Fill/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer3/HBoxContainer3/HBoxContainer2"]
@@ -1329,11 +1329,11 @@ theme_override_colors/font_pressed_color = Color(0.572549, 0.4, 0.282353, 1)
 theme_override_colors/font_focus_color = Color(0.713726, 0.537255, 0.384314, 1)
 theme_override_colors/font_color = Color(0.713726, 0.537255, 0.384314, 1)
 theme_override_font_sizes/font_size = 28
-theme_override_styles/focus = ExtResource("5_1sjtx")
-theme_override_styles/hover_pressed = ExtResource("6_t4c4u")
-theme_override_styles/hover = ExtResource("5_1sjtx")
-theme_override_styles/pressed = ExtResource("6_t4c4u")
-theme_override_styles/normal = ExtResource("7_e524h")
+theme_override_styles/focus = ExtResource("5_ghnea")
+theme_override_styles/hover_pressed = ExtResource("6_o2jt1")
+theme_override_styles/hover = ExtResource("5_ghnea")
+theme_override_styles/pressed = ExtResource("6_o2jt1")
+theme_override_styles/normal = ExtResource("7_uhksw")
 text = "D"
 
 [node name="Label" type="Label" parent="PopupMenu/Setting_ControllMenu_Keyboard_MenuScreen/Outline/MarginContainer/Fill/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer4/HBoxContainer2"]
@@ -1362,11 +1362,11 @@ theme_override_colors/font_pressed_color = Color(0.572549, 0.4, 0.282353, 1)
 theme_override_colors/font_focus_color = Color(0.713726, 0.537255, 0.384314, 1)
 theme_override_colors/font_color = Color(0.713726, 0.537255, 0.384314, 1)
 theme_override_font_sizes/font_size = 28
-theme_override_styles/focus = ExtResource("5_1sjtx")
-theme_override_styles/hover_pressed = ExtResource("6_t4c4u")
-theme_override_styles/hover = ExtResource("5_1sjtx")
-theme_override_styles/pressed = ExtResource("6_t4c4u")
-theme_override_styles/normal = ExtResource("7_e524h")
+theme_override_styles/focus = ExtResource("5_ghnea")
+theme_override_styles/hover_pressed = ExtResource("6_o2jt1")
+theme_override_styles/hover = ExtResource("5_ghnea")
+theme_override_styles/pressed = ExtResource("6_o2jt1")
+theme_override_styles/normal = ExtResource("7_uhksw")
 text = "2"
 
 [node name="Label" type="Label" parent="PopupMenu/Setting_ControllMenu_Keyboard_MenuScreen/Outline/MarginContainer/Fill/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer4/HBoxContainer3/HBoxContainer2"]
@@ -1396,11 +1396,11 @@ theme_override_colors/font_pressed_color = Color(0.572549, 0.4, 0.282353, 1)
 theme_override_colors/font_focus_color = Color(0.713726, 0.537255, 0.384314, 1)
 theme_override_colors/font_color = Color(0.713726, 0.537255, 0.384314, 1)
 theme_override_font_sizes/font_size = 28
-theme_override_styles/focus = ExtResource("5_1sjtx")
-theme_override_styles/hover_pressed = ExtResource("6_t4c4u")
-theme_override_styles/hover = ExtResource("5_1sjtx")
-theme_override_styles/pressed = ExtResource("6_t4c4u")
-theme_override_styles/normal = ExtResource("7_e524h")
+theme_override_styles/focus = ExtResource("5_ghnea")
+theme_override_styles/hover_pressed = ExtResource("6_o2jt1")
+theme_override_styles/hover = ExtResource("5_ghnea")
+theme_override_styles/pressed = ExtResource("6_o2jt1")
+theme_override_styles/normal = ExtResource("7_uhksw")
 text = "LMB"
 
 [node name="Label" type="Label" parent="PopupMenu/Setting_ControllMenu_Keyboard_MenuScreen/Outline/MarginContainer/Fill/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer5/HBoxContainer2"]
@@ -1429,11 +1429,11 @@ theme_override_colors/font_pressed_color = Color(0.572549, 0.4, 0.282353, 1)
 theme_override_colors/font_focus_color = Color(0.713726, 0.537255, 0.384314, 1)
 theme_override_colors/font_color = Color(0.713726, 0.537255, 0.384314, 1)
 theme_override_font_sizes/font_size = 28
-theme_override_styles/focus = ExtResource("5_1sjtx")
-theme_override_styles/hover_pressed = ExtResource("6_t4c4u")
-theme_override_styles/hover = ExtResource("5_1sjtx")
-theme_override_styles/pressed = ExtResource("6_t4c4u")
-theme_override_styles/normal = ExtResource("7_e524h")
+theme_override_styles/focus = ExtResource("5_ghnea")
+theme_override_styles/hover_pressed = ExtResource("6_o2jt1")
+theme_override_styles/hover = ExtResource("5_ghnea")
+theme_override_styles/pressed = ExtResource("6_o2jt1")
+theme_override_styles/normal = ExtResource("7_uhksw")
 text = "3"
 
 [node name="Label" type="Label" parent="PopupMenu/Setting_ControllMenu_Keyboard_MenuScreen/Outline/MarginContainer/Fill/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer5/HBoxContainer3/HBoxContainer2"]
@@ -1463,11 +1463,11 @@ theme_override_colors/font_pressed_color = Color(0.572549, 0.4, 0.282353, 1)
 theme_override_colors/font_focus_color = Color(0.713726, 0.537255, 0.384314, 1)
 theme_override_colors/font_color = Color(0.713726, 0.537255, 0.384314, 1)
 theme_override_font_sizes/font_size = 28
-theme_override_styles/focus = ExtResource("5_1sjtx")
-theme_override_styles/hover_pressed = ExtResource("6_t4c4u")
-theme_override_styles/hover = ExtResource("5_1sjtx")
-theme_override_styles/pressed = ExtResource("6_t4c4u")
-theme_override_styles/normal = ExtResource("7_e524h")
+theme_override_styles/focus = ExtResource("5_ghnea")
+theme_override_styles/hover_pressed = ExtResource("6_o2jt1")
+theme_override_styles/hover = ExtResource("5_ghnea")
+theme_override_styles/pressed = ExtResource("6_o2jt1")
+theme_override_styles/normal = ExtResource("7_uhksw")
 text = "RMB"
 
 [node name="Label" type="Label" parent="PopupMenu/Setting_ControllMenu_Keyboard_MenuScreen/Outline/MarginContainer/Fill/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer6/HBoxContainer2"]
@@ -1496,11 +1496,11 @@ theme_override_colors/font_pressed_color = Color(0.572549, 0.4, 0.282353, 1)
 theme_override_colors/font_focus_color = Color(0.713726, 0.537255, 0.384314, 1)
 theme_override_colors/font_color = Color(0.713726, 0.537255, 0.384314, 1)
 theme_override_font_sizes/font_size = 28
-theme_override_styles/focus = ExtResource("5_1sjtx")
-theme_override_styles/hover_pressed = ExtResource("6_t4c4u")
-theme_override_styles/hover = ExtResource("5_1sjtx")
-theme_override_styles/pressed = ExtResource("6_t4c4u")
-theme_override_styles/normal = ExtResource("7_e524h")
+theme_override_styles/focus = ExtResource("5_ghnea")
+theme_override_styles/hover_pressed = ExtResource("6_o2jt1")
+theme_override_styles/hover = ExtResource("5_ghnea")
+theme_override_styles/pressed = ExtResource("6_o2jt1")
+theme_override_styles/normal = ExtResource("7_uhksw")
 text = "4"
 
 [node name="Label" type="Label" parent="PopupMenu/Setting_ControllMenu_Keyboard_MenuScreen/Outline/MarginContainer/Fill/MarginContainer/VBoxContainer/VBoxContainer/HBoxContainer6/HBoxContainer3/HBoxContainer2"]
@@ -1552,7 +1552,7 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_l22s5")
 custom_minimum_size = Vector2(300, 140)
 layout_mode = 2
 size_flags_horizontal = 4
-texture = ExtResource("1_5pa2v")
+texture = ExtResource("2_4uvec")
 region_rect = Rect2(59, 59, 26, 26)
 patch_margin_left = 4
 patch_margin_top = 4
@@ -1641,7 +1641,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0.56, 0.3836, 0.364, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 3
-theme_override_fonts/font = ExtResource("2_bqx8j")
+theme_override_fonts/font = ExtResource("9_w683a")
 text = "Coins:"
 
 [node name="Score" type="Label" parent="PopupMenu/TestStuff/BaseMenuScreenContainer/BaseMenuScreen/VBoxContainer/NinePatchRect/MarginContainer/StatDisplayContainer"]
@@ -1650,7 +1650,7 @@ size_flags_horizontal = 0
 theme_override_colors/font_color = Color(0.984314, 0.976471, 0.968627, 1)
 theme_override_colors/font_shadow_color = Color(0.560784, 0.384314, 0.364706, 1)
 theme_override_constants/shadow_outline_size = 3
-theme_override_fonts/font = ExtResource("2_bqx8j")
+theme_override_fonts/font = ExtResource("9_w683a")
 text = "Score:"
 
 [node name="Seperator" type="Control" parent="PopupMenu/TestStuff/BaseMenuScreenContainer"]
@@ -1701,7 +1701,7 @@ custom_minimum_size = Vector2(300, 400)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
-texture = ExtResource("1_5pa2v")
+texture = ExtResource("2_4uvec")
 region_rect = Rect2(59, 59, 26, 26)
 patch_margin_left = 4
 patch_margin_top = 4
@@ -1725,7 +1725,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0.56, 0.3836, 0.364, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 3
-theme_override_fonts/font = ExtResource("2_bqx8j")
+theme_override_fonts/font = ExtResource("9_w683a")
 text = "How to Play"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="PopupMenu/TestStuff/HelpMenuContainer"]
@@ -1764,7 +1764,7 @@ theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_colors/font_shadow_color = Color(0.56, 0.3836, 0.364, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_outline_size = 3
-theme_override_fonts/font = ExtResource("2_bqx8j")
+theme_override_fonts/font = ExtResource("9_w683a")
 text = "How to Play safdfsaef ef sf sef esfesfsedfgwretzg rtj oöjölojuk gdiuzagduiawgd baiuwzgdziawgdzjkawgdzjkaw igdizawgdzjkawgdjz iawgdizawgdzkjlawgdjkza iawgdkjlzawgd kjhlawwgdkjhawg aiwgdiawgdzjkawgdkj jhawgdjzawgdjzgwajh iawgdizawgdzkjlawgdjkza iawgdkjlzawgd kjhlawwgdkjhawg aiwgdiawgdzjkawgdkj jhawgdjzawgdjzgwajh iawgdizawgdzkjlawgdjkza iawgdkjlzawgd kjhlawwgdkjhawg aiwgdiawgdzjkawgdkj jhawgdjzawgdjzgwajh iawgdizawgdzkjlawgdjkza iawgdkjlzawgd kjhlawwgdkjhawg aiwgdiawgdzjkawgdkj jhawgdjzawgdjzgwajh iawgdizawgdzkjlawgdjkza iawgdkjlzawgd kjhlawwgdkjhawg aiwgdiawgdzjkawgdkj jhawgdjzawgdjzgwajh iawgdizawgdzkjlawgdjkza iawgdkjlzawgd kjhlawwgdkjhawg aiwgdiawgdzjkaw"
 autowrap_mode = 1
 
