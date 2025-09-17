@@ -5,10 +5,6 @@ extends MarginContainer
 @export var SettingsMenuScreen: MarginContainer
 
 @export var Setting_VideoGameMenu_MenuScreen: MarginContainer
-@onready var fps_checkbox_30: Button = $Setting_VideoMenu_MenuScreen/Outline/MarginContainer3/VBoxContainer/HBoxContainer4/VBoxContainer2/FPS_Checkbox30
-@onready var fps_checkbox_60: Button = $Setting_VideoMenu_MenuScreen/Outline/MarginContainer3/VBoxContainer/HBoxContainer4/VBoxContainer3/FPS_Checkbox60
-@onready var fps_checkbox_max: Button = $Setting_VideoMenu_MenuScreen/Outline/MarginContainer3/VBoxContainer/HBoxContainer4/VBoxContainer4/FPS_CheckboxMAX
-
 @export var Setting_AudioMenu_MenuScreen: MarginContainer
 
 @export var Setting_ControllMenu_MenuScreen: MarginContainer
