@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://baj721kpytavn"]
 
-[ext_resource type="Script" path="res://Scripts/Entity.gd" id="1_ldtod"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_p4dvc"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_3npau"]
 animations = [{
@@ -13,10 +13,9 @@ animations = [{
 [node name="Node2D" type="Node2D"]
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
-script = ExtResource("1_ldtod")
-max_health = 10
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+shape = SubResource("RectangleShape2D_p4dvc")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="CharacterBody2D"]
 sprite_frames = SubResource("SpriteFrames_3npau")
