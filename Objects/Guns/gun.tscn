@@ -1,6 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://uomd2v331crt"]
+[gd_scene load_steps=5 format=3 uid="uid://uomd2v331crt"]
 
+[ext_resource type="Script" path="res://Scripts/gun.gd" id="1_ayk0c"]
 [ext_resource type="Texture2D" uid="uid://cqn8pfdvhhwp1" path="res://Assets/icon.svg" id="1_h6o0q"]
+[ext_resource type="Resource" uid="uid://bisiv7cw0g7pw" path="res://Resources/Gun_resource.tres" id="2_6v2ch"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_f8nxq"]
 animations = [{
@@ -14,8 +16,13 @@ animations = [{
 }]
 
 [node name="Gun" type="Node2D"]
+script = ExtResource("1_ayk0c")
+gun_data = ExtResource("2_6v2ch")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(0.0625, 0.0185547)
 sprite_frames = SubResource("SpriteFrames_f8nxq")
 animation = &"Gun"
+
+[node name="Marker2D" type="Marker2D" parent="."]
+position = Vector2(4, 0)

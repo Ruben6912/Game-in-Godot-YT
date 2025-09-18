@@ -27,5 +27,8 @@ shape = SubResource("CapsuleShape2D_n3c4w")
 animation = &"Run"
 frame_progress = 0.649747
 
+[node name="Gun" parent="Charakter/Charakter/CharacterBody2D" index="3"]
+scale = Vector2(1.02325, 1.08427)
+
 [editable path="Charakter"]
 [editable path="Charakter/Charakter"]

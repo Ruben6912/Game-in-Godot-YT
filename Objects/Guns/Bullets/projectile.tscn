@@ -1,5 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://bx3akwaie472t"]
+[gd_scene load_steps=5 format=3 uid="uid://bx3akwaie472t"]
 
+[ext_resource type="Script" path="res://Scripts/bullet_base.gd" id="1_pbqa8"]
 [ext_resource type="Texture2D" uid="uid://cqn8pfdvhhwp1" path="res://Assets/icon.svg" id="1_wqpec"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_h472j"]
@@ -16,7 +17,8 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0d0jm"]
 size = Vector2(4, 1)
 
-[node name="Projectile" type="Node2D"]
+[node name="Area2D" type="Area2D"]
+script = ExtResource("1_pbqa8")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-7.45058e-09, 0)
@@ -25,5 +27,7 @@ sprite_frames = SubResource("SpriteFrames_h472j")
 animation = &"Bullet"
 offset = Vector2(4, 1)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(-7.45058e-09, 0)
+scale = Vector2(0.03125, 0.0078125)
 shape = SubResource("RectangleShape2D_0d0jm")

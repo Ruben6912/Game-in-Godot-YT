@@ -1,6 +1,7 @@
 extends "res://Scripts/Entity.gd"
 class_name Player
 
+@onready var gun: Node2D = $Gun
 @onready var player_anim: AnimatedSprite2D = $AnimatedSprite2D
 
 func _physics_process(delta: float) -> void:
@@ -36,7 +37,6 @@ func _physics_process(delta: float) -> void:
 		_play_idle_animation()
 	print(velocity)
 
-
 func _play_walk_animation() -> void:
 	if player_anim.animation != "Run":
 		player_anim.play("Run")
@@ -44,3 +44,9 @@ func _play_walk_animation() -> void:
 func _play_idle_animation() -> void:
 	if player_anim.animation != "Idle":
 		player_anim.play("Idle")
+
+func _input(event: InputEvent) -> void:
+	if event.is_action_pressed("Shoot_1"):
+		var mouse_pos = get_global_mouse_position()
+		var dir = (mouse_pos - gun.muzzle.global_position).normalized()
+		gun.fire(dir)

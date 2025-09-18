@@ -1,8 +1,9 @@
-[gd_scene load_steps=11 format=3 uid="uid://ygoauv1qpre3"]
+[gd_scene load_steps=12 format=3 uid="uid://ygoauv1qpre3"]
 
 [ext_resource type="PackedScene" uid="uid://baj721kpytavn" path="res://Objects/Entity/Entity.tscn" id="1_g43kd"]
 [ext_resource type="Texture2D" uid="uid://bhrw6ob5kkjqu" path="res://Assets/Test_assets/Test bean.png" id="2_c44yo"]
 [ext_resource type="Script" path="res://Scripts/CharakterScript.gd" id="2_o7c0r"]
+[ext_resource type="PackedScene" uid="uid://uomd2v331crt" path="res://Objects/Guns/gun.tscn" id="3_onso5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_2ro03"]
 radius = 4.0
@@ -81,5 +82,8 @@ autoplay = "Idle"
 
 [node name="Camera2D" type="Camera2D" parent="Charakter/CharacterBody2D" index="2"]
 zoom = Vector2(5, 5)
+
+[node name="Gun" parent="Charakter/CharacterBody2D" index="3" instance=ExtResource("3_onso5")]
+position = Vector2(3, 1)
 
 [editable path="Charakter"]
