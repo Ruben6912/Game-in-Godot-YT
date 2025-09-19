@@ -45,8 +45,7 @@ func start_dash() -> void:
 	# Disable hurtbox detection and gun during dash
 	hurtbox.monitoring = false
 	hurtbox.monitorable = false
-													###########Add that the gun and the script get disabled and reenabled when dashing
-	#gun.process_mode = Node.PROCESS_MODE_DISABLED
+	gun.hide()
 
 	# Start the timer for the dash
 	timer.start()
@@ -57,8 +56,7 @@ func end_dash() -> void:
 	# Re-enable hurtbox and gun
 	hurtbox.monitoring = true
 	hurtbox.monitorable = true
-													###########Add that the gun and the script get disabled and reenabled when dashing
-	#gun.process_mode = Node.PROCESS_MODE_INHERIT
+	gun.visible = true
 
 	# Switch back to walk or idle depending on input
 	var input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
@@ -76,11 +74,22 @@ func _play_idle_animation() -> void:
 		player_anim.play("Idle")
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("Shoot_1"):
+	if event.is_action_pressed("Shoot_1") and player_data.is_dashing == false:
 		var mouse_pos = get_global_mouse_position()
 		var dir = (mouse_pos - gun.muzzle.global_position).normalized()
 		gun.fire(dir)
 
-
 func _on_timer_timeout() -> void:
 	end_dash()
+
+func toggle_node(node): #Function to disable a node (for later purposes)
+	player_data.is_disabled = false
+
+	if node.is_disabled:
+		node.visible = false                # Hide the node
+		node.set_process(false)             # Stop _process()
+		node.set_physics_process(false)     # Stop _physics_process()
+	else:
+		node.visible = true
+		node.set_process(true)
+		node.set_physics_process(true)
