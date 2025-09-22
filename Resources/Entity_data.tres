@@ -1,3 +1,11 @@
-[gd_resource type="Resource" format=3 uid="uid://bij7yao3iy6k6"]
+[gd_resource type="Resource" script_class="Entity" load_steps=2 format=3 uid="uid://bij7yao3iy6k6"]
+
+[ext_resource type="Script" path="res://Resources/Entity_data.gd" id="1_xkib0"]
 
 [resource]
+script = ExtResource("1_xkib0")
+max_health = 3
+health = null
+defense = 0
+speed = 0.0
+damage = 3

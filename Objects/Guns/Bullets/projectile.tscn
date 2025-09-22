@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bx3akwaie472t"]
+[gd_scene load_steps=7 format=3 uid="uid://bx3akwaie472t"]
 
 [ext_resource type="Script" path="res://Scripts/bullet_base.gd" id="1_pbqa8"]
 [ext_resource type="Texture2D" uid="uid://cqn8pfdvhhwp1" path="res://Assets/icon.svg" id="1_wqpec"]
+[ext_resource type="PackedScene" uid="uid://c3au5pucl4ru0" path="res://Objects/hitbox.tscn" id="3_64m2l"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_h472j"]
 animations = [{
@@ -17,6 +18,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0d0jm"]
 size = Vector2(4, 1)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_dl3hp"]
+size = Vector2(3.7925, 0.885)
+
 [node name="Area2D" type="Area2D"]
 script = ExtResource("1_pbqa8")
 
@@ -31,3 +35,11 @@ offset = Vector2(4, 1)
 position = Vector2(-7.45058e-09, 0)
 scale = Vector2(0.03125, 0.0078125)
 shape = SubResource("RectangleShape2D_0d0jm")
+
+[node name="Hitbox" parent="." instance=ExtResource("3_64m2l")]
+
+[node name="CollisionShape2D" parent="Hitbox" index="0"]
+position = Vector2(0.10375, 0)
+shape = SubResource("RectangleShape2D_dl3hp")
+
+[editable path="Hitbox"]

@@ -1,0 +1,6 @@
+[gd_resource type="Resource" load_steps=2 format=3 uid="uid://dkfpbyh2p1vsi"]
+
+[ext_resource type="Script" path="res://Resources/Enemy_data.gd" id="1_ndtaf"]
+
+[resource]
+script = ExtResource("1_ndtaf")

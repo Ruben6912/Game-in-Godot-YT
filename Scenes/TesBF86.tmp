@@ -15,6 +15,7 @@ size = Vector2(128, 128)
 [node name="Charakter" parent="." instance=ExtResource("2_rddr7")]
 position = Vector2(35, 28)
 resource_data = ExtResource("2_5twfo")
+char_state = "Idle"
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 freeze = true

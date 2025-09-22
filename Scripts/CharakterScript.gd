@@ -1,6 +1,6 @@
 extends CharacterBody2D
 
-@export var player_data: PlayerData
+@export var resource_data: PlayerData
 @onready var gun: Node2D = $Gun
 @onready var player_anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var timer: Timer = $Timer
@@ -8,24 +8,26 @@ extends CharacterBody2D
 
 @export_enum("Idle", "Run", "Dash") var char_state: String = "Idle"
 
+func _ready() -> void:
+	pass
 
 func _physics_process(delta: float) -> void:
 	var input_vector = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
 	# Normalize and apply speed
 	if input_vector != Vector2.ZERO:
-		velocity = input_vector.normalized() * player_data.speed
+		velocity = input_vector.normalized() * resource_data.speed
 	else:
 		velocity = Vector2.ZERO
 	
 	# Update last direction if moving
-	if input_vector != Vector2.ZERO and not player_data.is_dashing:
-		player_data.last_direction = input_vector.normalized()
+	if input_vector != Vector2.ZERO and not resource_data.is_dashing:
+		resource_data.last_direction = input_vector.normalized()
 
-	if player_data.is_dashing:
-		velocity = player_data.last_direction * player_data.dashSpeed
+	if resource_data.is_dashing:
+		velocity = resource_data.last_direction * resource_data.dashSpeed
 	else:
-		velocity = input_vector * player_data.speed
+		velocity = input_vector * resource_data.speed
 	if Input.is_action_just_pressed("Dash"):
 		start_dash()
 	move_and_slide()
@@ -36,8 +38,8 @@ func _physics_process(delta: float) -> void:
 		player_anim.flip_h = velocity.x < 0
 	
 func start_dash() -> void:
-	player_data.is_dashing = true
-	velocity = player_data.last_direction * player_data.dashSpeed
+	resource_data.is_dashing = true
+	velocity = resource_data.last_direction * resource_data.dashSpeed
 
 	# Play dash animation
 	player_anim.play("Dash")
@@ -51,7 +53,7 @@ func start_dash() -> void:
 	timer.start()
 
 func end_dash() -> void:
-	player_data.is_dashing = false
+	resource_data.is_dashing = false
 
 	# Re-enable hurtbox and gun
 	hurtbox.monitoring = true
@@ -65,6 +67,16 @@ func end_dash() -> void:
 	else:
 		player_anim.play("Run")
 
+func take_damage(amount: int) -> void:
+	resource_data.health -= amount
+	print("%s took %d damage, HP left: %d" % [name, amount, resource_data.health])
+	if resource_data.health <= 0:
+		die()
+
+func die() -> void:
+	print("kill")
+	queue_free()
+
 func _play_walk_animation() -> void:
 	if player_anim.animation != "Run":
 		player_anim.play("Run")
@@ -74,7 +86,7 @@ func _play_idle_animation() -> void:
 		player_anim.play("Idle")
 
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("Shoot_1") and player_data.is_dashing == false:
+	if event.is_action_pressed("Shoot_1") and resource_data.is_dashing == false:
 		var mouse_pos = get_global_mouse_position()
 		var dir = (mouse_pos - gun.muzzle.global_position).normalized()
 		gun.fire(dir)
@@ -83,7 +95,7 @@ func _on_timer_timeout() -> void:
 	end_dash()
 
 func toggle_node(node): #Function to disable a node (for later purposes)
-	player_data.is_disabled = false
+	resource_data.is_disabled = false
 
 	if node.is_disabled:
 		node.visible = false                # Hide the node

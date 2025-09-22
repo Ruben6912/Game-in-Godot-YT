@@ -4,10 +4,14 @@
 
 [resource]
 script = ExtResource("1_b2y7a")
-max_health = 3
-health = null
+steam_user_name = "Ruben"
+character = "Test"
+character_team_id = "player"
+max_health = 10
+health = 10
 defense = 0
 max_speed = 0.0
 speed = 100.0
 dashSpeed = 200.0
 is_dashing = false
+is_disabled = false

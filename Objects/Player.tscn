@@ -1,9 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://bkwfcy5bv0s4x"]
+[gd_scene load_steps=12 format=3 uid="uid://bkwfcy5bv0s4x"]
 
 [ext_resource type="Texture2D" uid="uid://bhrw6ob5kkjqu" path="res://Assets/Test_assets/Test bean.png" id="2_c44yo"]
-[ext_resource type="Resource" uid="uid://uet1jegt32nt" path="res://Resources/Player_data.tres" id="2_gwpeo"]
 [ext_resource type="Script" path="res://Scripts/CharakterScript.gd" id="2_o7c0r"]
 [ext_resource type="PackedScene" uid="uid://uomd2v331crt" path="res://Objects/Guns/gun.tscn" id="3_onso5"]
+[ext_resource type="PackedScene" uid="uid://dexh6einbl86k" path="res://Objects/hurtbox.tscn" id="5_rddy6"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_skpav"]
 radius = 4.0
@@ -62,13 +62,13 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_whu7m"]
-radius = 4.0
-height = 12.0
-
 [node name="CharacterBody2D" type="CharacterBody2D"]
+light_mask = 21
+visibility_layer = 21
 script = ExtResource("2_o7c0r")
-player_data = ExtResource("2_gwpeo")
+
+[node name="Gun" parent="." instance=ExtResource("3_onso5")]
+position = Vector2(3, 1)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
@@ -82,14 +82,13 @@ autoplay = "Idle"
 [node name="Camera2D" type="Camera2D" parent="."]
 zoom = Vector2(5, 5)
 
-[node name="Gun" parent="." instance=ExtResource("3_onso5")]
-position = Vector2(3, 1)
+[node name="Hurtbox" parent="." instance=ExtResource("5_rddy6")]
 
-[node name="Hurtbox" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hurtbox"]
+[node name="CollisionShape2D" parent="Hurtbox" index="0"]
 position = Vector2(0, 2)
-shape = SubResource("CapsuleShape2D_whu7m")
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.25
+
+[editable path="Gun"]
+[editable path="Hurtbox"]

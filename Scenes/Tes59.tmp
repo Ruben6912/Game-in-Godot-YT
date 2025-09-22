@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bst0aw3k7j8g6"]
+[gd_scene load_steps=7 format=3 uid="uid://bst0aw3k7j8g6"]
 
 [ext_resource type="Texture2D" uid="uid://cqn8pfdvhhwp1" path="res://Assets/icon.svg" id="1_ac0o5"]
 [ext_resource type="Resource" uid="uid://uet1jegt32nt" path="res://Resources/Player_data.tres" id="2_5twfo"]
 [ext_resource type="PackedScene" uid="uid://c3au5pucl4ru0" path="res://Objects/hitbox.tscn" id="2_luqwr"]
 [ext_resource type="PackedScene" uid="uid://bkwfcy5bv0s4x" path="res://Objects/Player.tscn" id="2_rddr7"]
 [ext_resource type="Script" path="res://Scenes/Obstacle.gd" id="3_34jld"]
-[ext_resource type="Resource" uid="uid://bij7yao3iy6k6" path="res://Resources/Entity_data.tres" id="5_amgit"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kuy1g"]
 size = Vector2(128, 128)
@@ -15,6 +14,7 @@ size = Vector2(128, 128)
 [node name="Charakter" parent="." instance=ExtResource("2_rddr7")]
 position = Vector2(35, 28)
 resource_data = ExtResource("2_5twfo")
+char_state = "Idle"
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 freeze = true
@@ -33,7 +33,6 @@ shape = SubResource("RectangleShape2D_kuy1g")
 light_mask = 21
 visibility_layer = 21
 script = ExtResource("3_34jld")
-resource_data = ExtResource("5_amgit")
 
 [node name="Icon" type="Sprite2D" parent="CharacterBody2D"]
 position = Vector2(102.5, 30)
