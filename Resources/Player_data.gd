@@ -12,4 +12,5 @@ class_name PlayerData
 @export var dashSpeed: float
 @export var is_dashing: bool
 @export var is_disabled: bool
+@export var can_pause: bool
 var last_direction: Vector2 = Vector2.RIGHT

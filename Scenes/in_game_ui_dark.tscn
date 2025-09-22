@@ -139,6 +139,7 @@ layout_mode = 2
 texture = ExtResource("2_r8n1h")
 
 [node name="StartingScreen" type="MarginContainer" parent="MarginContainer"]
+visible = false
 z_index = 1
 custom_minimum_size = Vector2(500, 500)
 layout_mode = 2
@@ -452,7 +453,6 @@ theme_override_styles/normal = SubResource("StyleBoxTexture_1f22o")
 text = "Back"
 
 [node name="SettingMenuScreen" type="MarginContainer" parent="MarginContainer"]
-visible = false
 custom_minimum_size = Vector2(500, 500)
 layout_mode = 2
 size_flags_horizontal = 4

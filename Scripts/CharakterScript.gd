@@ -1,5 +1,16 @@
 extends CharacterBody2D
 
+
+@onready var pause_menu: Control   # pause menu
+func pause():
+	if resource_data.can_pause == true:
+		get_tree().paused = true
+		resource_data.can_pause = false
+		var message = "can't pause at the moment."
+		print(message)
+func unpause():
+		get_tree().paused = false
+		resource_data.can_pause = true
 @export var resource_data: PlayerData
 @onready var gun: Node2D = $Gun
 @onready var player_anim: AnimatedSprite2D = $AnimatedSprite2D
@@ -90,6 +101,8 @@ func _input(event: InputEvent) -> void:
 		var mouse_pos = get_global_mouse_position()
 		var dir = (mouse_pos - gun.muzzle.global_position).normalized()
 		gun.fire(dir)
+	if event.is_action_pressed("Escape") and resource_data.can_pause == true:
+		pause()
 
 func _on_timer_timeout() -> void:
 	end_dash()
