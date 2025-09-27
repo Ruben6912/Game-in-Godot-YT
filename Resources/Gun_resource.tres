@@ -18,5 +18,5 @@ bullet_lifetime = 0.3
 damage = 10
 reload_time = 1.0
 fire_rate = 0.2
-bullets_per_shot = 10
-spread_angle = 45.0
+bullets_per_shot = 1
+spread_angle = 2.0

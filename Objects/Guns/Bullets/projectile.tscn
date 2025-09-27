@@ -37,6 +37,8 @@ scale = Vector2(0.03125, 0.0078125)
 shape = SubResource("RectangleShape2D_0d0jm")
 
 [node name="Hitbox" parent="." instance=ExtResource("3_64m2l")]
+light_mask = 0
+visibility_layer = 0
 
 [node name="CollisionShape2D" parent="Hitbox" index="0"]
 position = Vector2(0.10375, 0)
