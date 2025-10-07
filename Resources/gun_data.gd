@@ -5,7 +5,7 @@ class_name GunData
 @export var gun_name: String = "Default Gun"
 
 # Dropdown for gun categories, tiers 
-@export_enum("Pistol", "Shotgun", "Rifle", "SMG", "Sniper") var gun_type: String = "Pistol"
+@export_enum("Pistol", "Shotgun", "SMG", "Sniper") var gun_type: String = "Pistol"
 @export var gun_level: int = 1
 @export_enum("None","Fire","Poison","Ice","Electricity", "Wind", "Curse", "Blessing") var gun_debuff: String = "None"
 
