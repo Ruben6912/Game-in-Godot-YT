@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://dexh6einbl86k"]
 
-[ext_resource type="Script" path="res://Scripts/hurtbox.gd" id="1_6naks"]
+[ext_resource type="Script" uid="uid://cq5k424v08xok" path="res://Scripts/hurtbox.gd" id="1_6naks"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5w8bb"]
 radius = 4.0
@@ -12,3 +12,5 @@ script = ExtResource("1_6naks")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_5w8bb")
+
+[connection signal="area_exited" from="." to="." method="_on_area_exited"]

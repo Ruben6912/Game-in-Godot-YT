@@ -4,7 +4,7 @@
 [ext_resource type="Resource" uid="uid://uet1jegt32nt" path="res://Resources/Player_data.tres" id="2_5twfo"]
 [ext_resource type="PackedScene" uid="uid://c3au5pucl4ru0" path="res://Objects/hitbox.tscn" id="2_luqwr"]
 [ext_resource type="PackedScene" uid="uid://bkwfcy5bv0s4x" path="res://Objects/Player.tscn" id="2_rddr7"]
-[ext_resource type="Script" path="res://Scenes/Obstacle.gd" id="3_34jld"]
+[ext_resource type="Script" uid="uid://c0hatcpcxag65" path="res://Scenes/Obstacle.gd" id="3_34jld"]
 [ext_resource type="Resource" uid="uid://bij7yao3iy6k6" path="res://Resources/Entity_data.tres" id="5_amgit"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kuy1g"]

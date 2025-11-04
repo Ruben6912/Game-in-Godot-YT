@@ -19,10 +19,8 @@ func unpause():
 
 @export_enum("Idle", "Run", "Dash") var char_state: String = "Idle"
 
-func _ready() -> void:
-	pass
-
 func _physics_process(delta: float) -> void:
+	gun.look_at(get_global_mouse_position())
 	var input_vector = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
 	# Normalize and apply speed
@@ -45,9 +43,12 @@ func _physics_process(delta: float) -> void:
 
 	# Flip sprite if moving left/right
 	### Später zur rotation der Waffe ändern
-	if velocity.x != 0:
-		player_anim.flip_h = velocity.x < 0
-	
+	print(gun.rotation)
+	if gun.rotation >= 90 and gun.rotation <= 270:
+		player_anim.flip_h = true
+	else:
+		player_anim.flip_h = false
+		
 func start_dash() -> void:
 	resource_data.is_dashing = true
 	velocity = resource_data.last_direction * resource_data.dashSpeed
