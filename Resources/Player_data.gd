@@ -8,6 +8,8 @@ class_name PlayerData
 @export var health: int = max_health
 @export var defense: int = 0
 @export var max_speed: float
+@export var mana: float
+@export var max_mana: float
 @export var speed: float
 @export var dashSpeed: float
 @export var is_dashing: bool
