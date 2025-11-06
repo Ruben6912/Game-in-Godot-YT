@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 @onready var pause_menu: Control   # pause menu
 func pause():
 	if resource_data.can_pause == true:
@@ -13,6 +12,7 @@ func unpause():
 		resource_data.can_pause = true
 @export var resource_data: PlayerData
 @onready var gun: Node2D = $Gun
+@onready var gun_animator: AnimatedSprite2D = $Gun/AnimatedSprite2D
 @onready var player_anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var timer: Timer = $Timer
 @onready var hurtbox: Area2D = $Hurtbox
@@ -20,6 +20,10 @@ func unpause():
 @export_enum("Idle", "Run", "Dash") var char_state: String = "Idle"
 
 func _physics_process(delta: float) -> void:
+		# Get the mouse and player positions in the same space
+	var mouse_pos = get_global_mouse_position()
+	var player_pos = global_position
+
 	gun.look_at(get_global_mouse_position())
 	var input_vector = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	
@@ -41,13 +45,18 @@ func _physics_process(delta: float) -> void:
 		start_dash()
 	move_and_slide()
 
-	# Flip sprite if moving left/right
-	### Später zur rotation der Waffe ändern
-	print(gun.rotation)
-	if gun.rotation >= 90 and gun.rotation <= 270:
-		player_anim.flip_h = true
-	else:
-		player_anim.flip_h = false
+	# Check if the mouse is to the right of the player
+	if mouse_pos.x > player_pos.x:
+		player_anim.flip_h = false # Face right
+		gun_animator.flip_v = false
+		gun_animator.offset = Vector2(48,-38)
+		gun.position = Vector2(3, 1)
+	# Check if the mouse is to the left of the player
+	elif mouse_pos.x < player_pos.x:
+		player_anim.flip_h = true # Face left
+		gun_animator.flip_v= true
+		gun_animator.offset = Vector2(48,38)
+		gun.position = Vector2(-3, 1)
 		
 func start_dash() -> void:
 	resource_data.is_dashing = true

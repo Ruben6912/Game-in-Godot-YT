@@ -1,7 +1,7 @@
 extends Node2D
 
 @export var gun_data: GunData
-@onready var muzzle: Node2D = $Marker2D
+@onready var muzzle: Node2D = $GunShaft
 
 var time_since_last_shot: float = 0.0
 

@@ -16,6 +16,12 @@ size = Vector2(128, 128)
 position = Vector2(35, 28)
 resource_data = ExtResource("2_5twfo")
 
+[node name="AnimatedSprite2D" parent="Charakter/Gun" index="0"]
+offset = Vector2(48, -38)
+
+[node name="GunShaft" parent="Charakter/Gun" index="1"]
+position = Vector2(7, -1)
+
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 freeze = true
 

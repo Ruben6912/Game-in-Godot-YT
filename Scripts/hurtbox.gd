@@ -13,7 +13,7 @@ func _ready() -> void:
 	add_to_group("Hurtbox")
 	area_entered.connect(_on_area_entered)
 
-func _on_area_exited(area):
+func _on_area_exited():
 	checking = false
 
 func start_repeating_check(area: Area2D):

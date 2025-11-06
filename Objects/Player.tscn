@@ -70,6 +70,9 @@ script = ExtResource("2_o7c0r")
 [node name="Gun" parent="." instance=ExtResource("3_onso5")]
 position = Vector2(3, 1)
 
+[node name="AnimatedSprite2D" parent="Gun" index="0"]
+z_index = 1
+
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 2)
 shape = SubResource("CapsuleShape2D_skpav")
@@ -89,6 +92,12 @@ position = Vector2(0, 2)
 
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.25
+
+[node name="PlayerHandleRight" type="Marker2D" parent="."]
+position = Vector2(3, 1)
+
+[node name="PlayerHandleLeft" type="Marker2D" parent="."]
+position = Vector2(-3, 1)
 
 [editable path="Gun"]
 [editable path="Hurtbox"]
