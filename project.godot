@@ -11,13 +11,17 @@ config_version=5
 [application]
 
 config/name="Youtube Game Project"
-run/main_scene="res://Scenes/in_game_ui_dark.tscn"
+run/main_scene="uid://bst0aw3k7j8g6"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://Assets/icon.svg"
 
 [audio]
 
 buses/default_bus_layout="res://Bus zeugs/default_bus_layout.tres"
+
+[autoload]
+
+PauseManager="*res://Scripts/PauseManager.gd"
 
 [display]
 

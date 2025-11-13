@@ -1,93 +1,113 @@
 extends CharacterBody2D
+# ============================================================
+# === PLAYER SCRIPT (TOP-DOWN ROGUELIKE) =====================
+# Handles movement, dashing, shooting, animations, and connects
+# with the global PauseManager for pausing logic.
+# ============================================================
 
-@onready var pause_menu: Control   # pause menu
-func pause():
-	if resource_data.can_pause == true:
-		get_tree().paused = true
-		resource_data.can_pause = false
-		var message = "can't pause at the moment."
-		print(message)
-func unpause():
-		get_tree().paused = false
-		resource_data.can_pause = true
-@export var resource_data: PlayerData
+@export var resource_data: PlayerData     # Player stats (speed, health, etc.)
+
+# --- Node references ---
 @onready var gun: Node2D = $Gun
 @onready var gun_animator: AnimatedSprite2D = $Gun/AnimatedSprite2D
 @onready var player_anim: AnimatedSprite2D = $AnimatedSprite2D
 @onready var timer: Timer = $Timer
 @onready var hurtbox: Area2D = $Hurtbox
 
-@export_enum("Idle", "Run", "Dash") var char_state: String = "Idle"
+# ============================================================
+# === PLAYER STATE MACHINE ==================================
+# ============================================================
+# We use this instead of scattered if-statements.
+# Makes it easy to add states later (e.g., Attack, Dead, etc.)
+enum CharState { IDLE, RUN, DASH }
+var state: CharState = CharState.IDLE
 
+func set_state(new_state: CharState) -> void:
+	if state == new_state:
+		return
+	state = new_state
+
+	match state:
+		CharState.IDLE:
+			player_anim.play("Idle")
+		CharState.RUN:
+			player_anim.play("Run")
+		CharState.DASH:
+			player_anim.play("Dash")
+
+# ============================================================
+# === MAIN MOVEMENT LOOP =====================================
+# ============================================================
 func _physics_process(delta: float) -> void:
-		# Get the mouse and player positions in the same space
+	# Don't process movement if the game is paused
+	if PauseManager.is_paused:
+		return
+
+	var input_vector = Input.get_vector("move_left", "move_right", "move_up", "move_down")
 	var mouse_pos = get_global_mouse_position()
 	var player_pos = global_position
 
-	gun.look_at(get_global_mouse_position())
-	var input_vector = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	
-	# Normalize and apply speed
-	if input_vector != Vector2.ZERO:
-		velocity = input_vector.normalized() * resource_data.speed
-	else:
-		velocity = Vector2.ZERO
-	
-	# Update last direction if moving
-	if input_vector != Vector2.ZERO and not resource_data.is_dashing:
-		resource_data.last_direction = input_vector.normalized()
+	# Update gun rotation to face the mouse
+	gun.look_at(mouse_pos)
 
-	if resource_data.is_dashing:
-		velocity = resource_data.last_direction * resource_data.dashSpeed
-	else:
-		velocity = input_vector * resource_data.speed
-	if Input.is_action_just_pressed("Dash"):
-		start_dash()
+	# --- STATE BEHAVIOR LOGIC ---
+	match state:
+		CharState.DASH:
+			velocity = resource_data.last_direction * resource_data.dashSpeed
+		_:
+			if input_vector != Vector2.ZERO:
+				velocity = input_vector.normalized() * resource_data.speed
+				resource_data.last_direction = input_vector.normalized()
+				set_state(CharState.RUN)
+			else:
+				velocity = Vector2.ZERO
+				set_state(CharState.IDLE)
+
 	move_and_slide()
 
-	# Check if the mouse is to the right of the player
-	if mouse_pos.x > player_pos.x:
-		player_anim.flip_h = false # Face right
-		gun_animator.flip_v = false
-		gun_animator.offset = Vector2(48,-38)
-		gun.position = Vector2(3, 1)
-	# Check if the mouse is to the left of the player
-	elif mouse_pos.x < player_pos.x:
-		player_anim.flip_h = true # Face left
-		gun_animator.flip_v= true
-		gun_animator.offset = Vector2(48,38)
-		gun.position = Vector2(-3, 1)
-		
+	# --- Input to start dash ---
+	if Input.is_action_just_pressed("Dash") and state != CharState.DASH:
+		start_dash()
+
+	# --- Handle sprite direction ---
+	_update_sprite_orientation(mouse_pos, player_pos)
+
+
+# ============================================================
+# === DASH HANDLING ==========================================
+# ============================================================
 func start_dash() -> void:
 	resource_data.is_dashing = true
-	velocity = resource_data.last_direction * resource_data.dashSpeed
+	set_state(CharState.DASH)
 
-	# Play dash animation
-	player_anim.play("Dash")
-
-	# Disable hurtbox detection and gun during dash
+	# Disable damage and hide gun
 	hurtbox.monitoring = false
 	hurtbox.monitorable = false
 	gun.hide()
 
-	# Start the timer for the dash
+	# Start dash timer
 	timer.start()
 
 func end_dash() -> void:
 	resource_data.is_dashing = false
-
-	# Re-enable hurtbox and gun
 	hurtbox.monitoring = true
 	hurtbox.monitorable = true
-	gun.visible = true
+	gun.show()
 
-	# Switch back to walk or idle depending on input
-	var input_dir = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	if input_dir == Vector2.ZERO:
-		player_anim.play("Idle")
+	# Go back to idle or run
+	var input_vector = Input.get_vector("move_left", "move_right", "move_up", "move_down")
+	if input_vector == Vector2.ZERO:
+		set_state(CharState.IDLE)
 	else:
-		player_anim.play("Run")
+		set_state(CharState.RUN)
 
+func _on_timer_timeout() -> void:
+	end_dash()
+
+
+# ============================================================
+# === DAMAGE & DEATH =========================================
+# ============================================================
 func take_damage(amount: int) -> void:
 	resource_data.health -= amount
 	print("%s took %d damage, HP left: %d" % [name, amount, resource_data.health])
@@ -95,36 +115,36 @@ func take_damage(amount: int) -> void:
 		die()
 
 func die() -> void:
-	print("kill")
+	print("Player has died.")
 	queue_free()
 
-func _play_walk_animation() -> void:
-	if player_anim.animation != "Run":
-		player_anim.play("Run")
 
-func _play_idle_animation() -> void:
-	if player_anim.animation != "Idle":
-		player_anim.play("Idle")
-
+# ============================================================
+# === INPUT HANDLING =========================================
+# ============================================================
 func _input(event: InputEvent) -> void:
-	if event.is_action_pressed("Shoot_1") and resource_data.is_dashing == false:
+	# Shoot (only if not dashing or paused)
+	if event.is_action_pressed("Shoot_1") and not resource_data.is_dashing and not PauseManager.is_paused:
 		var mouse_pos = get_global_mouse_position()
 		var dir = (mouse_pos - gun.muzzle.global_position).normalized()
 		gun.fire(dir)
-	if event.is_action_pressed("Escape") and resource_data.can_pause == true:
-		pause()
 
-func _on_timer_timeout() -> void:
-	end_dash()
+	# Pause input — handled through the PauseManager
+	if event.is_action_pressed("Escape"):
+		PauseManager.toggle_pause()
 
-func toggle_node(node): #Function to disable a node (for later purposes)
-	resource_data.is_disabled = false
 
-	if node.is_disabled:
-		node.visible = false                # Hide the node
-		node.set_process(false)             # Stop _process()
-		node.set_physics_process(false)     # Stop _physics_process()
+# ============================================================
+# === HELPER FUNCTIONS =======================================
+# ============================================================
+func _update_sprite_orientation(mouse_pos: Vector2, player_pos: Vector2) -> void:
+	if mouse_pos.x > player_pos.x:
+		player_anim.flip_h = false
+		gun_animator.flip_v = false
+		gun_animator.offset = Vector2(48, -38)
+		gun.position = Vector2(3, 1)
 	else:
-		node.visible = true
-		node.set_process(true)
-		node.set_physics_process(true)
+		player_anim.flip_h = true
+		gun_animator.flip_v = true
+		gun_animator.offset = Vector2(48, 38)
+		gun.position = Vector2(-3, 1)
