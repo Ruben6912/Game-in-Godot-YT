@@ -51,7 +51,10 @@ texture = ExtResource("1_ac0o5")
 position = Vector2(103, 30)
 
 [node name="PauseMenu" parent="." instance=ExtResource("7_mma61")]
-visible = false
+offset_left = 422.0
+offset_top = 240.0
+offset_right = 422.0
+offset_bottom = 240.0
 
 [connection signal="timeout" from="Charakter/Timer" to="Charakter" method="_on_timer_timeout"]
 
