@@ -1,6 +1,6 @@
 [gd_scene load_steps=36 format=3 uid="uid://48w7xp4cjutw"]
 
-[ext_resource type="Script" path="res://Scripts/popup_menu.gd" id="1_jarnf"]
+[ext_resource type="Script" uid="uid://cqatbr8odagdb" path="res://Scripts/popup_menu.gd" id="1_jarnf"]
 [ext_resource type="Texture2D" uid="uid://b5wqqv7huq7k0" path="res://UI/assets/UI_dark/Backgrounds/cave_lowres.png" id="2_r8n1h"]
 [ext_resource type="Texture2D" uid="uid://dypumcppcl0go" path="res://UI/assets/UI_dark/Button/none_border/panel-border-031.png" id="3_gwdpt"]
 [ext_resource type="FontFile" uid="uid://gxaay18gq5gb" path="res://Fonts/pixelFont-7-8x14-sproutLands.ttf" id="4_s15l1"]
@@ -55,50 +55,43 @@ texture = ExtResource("9_y1yxw")
 region_rect = Rect2(337, 497, 12, 14)
 modulate_color = Color(0.650128, 0.650128, 0.650128, 1)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_17fcg"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vflj8"]
+texture = ExtResource("9_y1yxw")
+region_rect = Rect2(354, 466, 12, 12)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_2h4w7"]
 texture = ExtResource("9_y1yxw")
 region_rect = Rect2(354, 482, 12, 12)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_vflj8"]
-texture = ExtResource("9_y1yxw")
-region_rect = Rect2(354, 466, 12, 12)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0iwg8"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_82k6d"]
-texture = ExtResource("9_y1yxw")
-region_rect = Rect2(354, 417, 12, 12)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_17fcg"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0bp4r"]
 texture = ExtResource("9_y1yxw")
 region_rect = Rect2(354, 401, 12, 12)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rv68b"]
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_thmxr"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_82k6d"]
 texture = ExtResource("9_y1yxw")
-region_rect = Rect2(354, 450, 12, 12)
+region_rect = Rect2(354, 417, 12, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_0iwg8"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_14m6q"]
 texture = ExtResource("9_y1yxw")
 region_rect = Rect2(354, 434, 12, 12)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_powr4"]
-texture = ExtResource("11_2wbb4")
-region_rect = Rect2(0, 0, 12, 12)
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_thmxr"]
+texture = ExtResource("9_y1yxw")
+region_rect = Rect2(354, 450, 12, 12)
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_rv68b"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_tses6"]
 texture = ExtResource("9_y1yxw")
 region_rect = Rect2(322, 451, 12, 12)
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kfl2p"]
-texture = ExtResource("12_7ggwq")
-texture_margin_left = 4.0
-texture_margin_top = 4.0
-texture_margin_right = 4.0
-texture_margin_bottom = 4.0
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_powr4"]
+texture = ExtResource("11_2wbb4")
+region_rect = Rect2(0, 0, 12, 12)
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_fp74a"]
 texture = ExtResource("13_18yil")
@@ -106,6 +99,13 @@ texture_margin_left = 2.0
 texture_margin_top = 2.0
 texture_margin_right = 2.0
 texture_margin_bottom = 2.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_kfl2p"]
+texture = ExtResource("12_7ggwq")
+texture_margin_left = 4.0
+texture_margin_top = 4.0
+texture_margin_right = 4.0
+texture_margin_bottom = 4.0
 
 [node name="in_game_ui_dark" type="Control"]
 layout_mode = 3
@@ -208,18 +208,18 @@ custom_minimum_size = Vector2(492, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_s15l1")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxTexture_1f22o")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_66tq8")
-theme_override_styles/hover = SubResource("StyleBoxTexture_66tq8")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_66tq8")
 theme_override_styles/normal = SubResource("StyleBoxTexture_1f22o")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_66tq8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_66tq8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_66tq8")
+theme_override_styles/focus = SubResource("StyleBoxTexture_1f22o")
 text = "Play"
 
 [node name="Control2" type="Control" parent="MarginContainer/StartingScreen/Outline/MarginContainer3/VBoxContainer"]
@@ -232,18 +232,18 @@ custom_minimum_size = Vector2(492, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_s15l1")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxTexture_1f22o")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_66tq8")
-theme_override_styles/hover = SubResource("StyleBoxTexture_66tq8")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_66tq8")
 theme_override_styles/normal = SubResource("StyleBoxTexture_1f22o")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_66tq8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_66tq8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_66tq8")
+theme_override_styles/focus = SubResource("StyleBoxTexture_1f22o")
 text = "Settings"
 autowrap_mode = 2
 
@@ -257,18 +257,18 @@ custom_minimum_size = Vector2(492, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_s15l1")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxTexture_1f22o")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_66tq8")
-theme_override_styles/hover = SubResource("StyleBoxTexture_66tq8")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_66tq8")
 theme_override_styles/normal = SubResource("StyleBoxTexture_1f22o")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_66tq8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_66tq8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_66tq8")
+theme_override_styles/focus = SubResource("StyleBoxTexture_1f22o")
 text = "TEST"
 
 [node name="Control4" type="Control" parent="MarginContainer/StartingScreen/Outline/MarginContainer3/VBoxContainer"]
@@ -281,18 +281,18 @@ custom_minimum_size = Vector2(492, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_s15l1")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxTexture_1f22o")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_66tq8")
-theme_override_styles/hover = SubResource("StyleBoxTexture_66tq8")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_66tq8")
 theme_override_styles/normal = SubResource("StyleBoxTexture_1f22o")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_66tq8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_66tq8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_66tq8")
+theme_override_styles/focus = SubResource("StyleBoxTexture_1f22o")
 text = "Exit Game"
 
 [node name="StartingGameMenuScreen" type="MarginContainer" parent="MarginContainer"]
@@ -364,18 +364,18 @@ custom_minimum_size = Vector2(492, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_s15l1")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxTexture_1f22o")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_66tq8")
-theme_override_styles/hover = SubResource("StyleBoxTexture_66tq8")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_66tq8")
 theme_override_styles/normal = SubResource("StyleBoxTexture_1f22o")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_66tq8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_66tq8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_66tq8")
+theme_override_styles/focus = SubResource("StyleBoxTexture_1f22o")
 text = "Singleplayer"
 
 [node name="Control2" type="Control" parent="MarginContainer/StartingGameMenuScreen/Outline/MarginContainer3/VBoxContainer"]
@@ -388,18 +388,18 @@ custom_minimum_size = Vector2(492, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_s15l1")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxTexture_1f22o")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_66tq8")
-theme_override_styles/hover = SubResource("StyleBoxTexture_66tq8")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_66tq8")
 theme_override_styles/normal = SubResource("StyleBoxTexture_1f22o")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_66tq8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_66tq8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_66tq8")
+theme_override_styles/focus = SubResource("StyleBoxTexture_1f22o")
 text = "Multiplayer"
 autowrap_mode = 2
 
@@ -413,18 +413,18 @@ custom_minimum_size = Vector2(492, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_s15l1")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxTexture_1f22o")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_66tq8")
-theme_override_styles/hover = SubResource("StyleBoxTexture_66tq8")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_66tq8")
 theme_override_styles/normal = SubResource("StyleBoxTexture_1f22o")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_66tq8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_66tq8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_66tq8")
+theme_override_styles/focus = SubResource("StyleBoxTexture_1f22o")
 text = "Gallery"
 
 [node name="Control4" type="Control" parent="MarginContainer/StartingGameMenuScreen/Outline/MarginContainer3/VBoxContainer"]
@@ -437,18 +437,18 @@ custom_minimum_size = Vector2(492, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_s15l1")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxTexture_1f22o")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_66tq8")
-theme_override_styles/hover = SubResource("StyleBoxTexture_66tq8")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_66tq8")
 theme_override_styles/normal = SubResource("StyleBoxTexture_1f22o")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_66tq8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_66tq8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_66tq8")
+theme_override_styles/focus = SubResource("StyleBoxTexture_1f22o")
 text = "Back"
 
 [node name="SettingMenuScreen" type="MarginContainer" parent="MarginContainer"]
@@ -520,18 +520,18 @@ custom_minimum_size = Vector2(492, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_s15l1")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxTexture_1f22o")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_66tq8")
-theme_override_styles/hover = SubResource("StyleBoxTexture_66tq8")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_66tq8")
 theme_override_styles/normal = SubResource("StyleBoxTexture_1f22o")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_66tq8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_66tq8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_66tq8")
+theme_override_styles/focus = SubResource("StyleBoxTexture_1f22o")
 text = "Video/Game"
 autowrap_mode = 2
 
@@ -545,18 +545,18 @@ custom_minimum_size = Vector2(492, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_s15l1")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxTexture_1f22o")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_66tq8")
-theme_override_styles/hover = SubResource("StyleBoxTexture_66tq8")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_66tq8")
 theme_override_styles/normal = SubResource("StyleBoxTexture_1f22o")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_66tq8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_66tq8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_66tq8")
+theme_override_styles/focus = SubResource("StyleBoxTexture_1f22o")
 text = "Audio"
 
 [node name="Control4" type="Control" parent="MarginContainer/SettingMenuScreen/Outline/MarginContainer3/VBoxContainer"]
@@ -569,18 +569,18 @@ custom_minimum_size = Vector2(492, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_s15l1")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxTexture_1f22o")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_66tq8")
-theme_override_styles/hover = SubResource("StyleBoxTexture_66tq8")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_66tq8")
 theme_override_styles/normal = SubResource("StyleBoxTexture_1f22o")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_66tq8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_66tq8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_66tq8")
+theme_override_styles/focus = SubResource("StyleBoxTexture_1f22o")
 text = "Controls"
 
 [node name="Control5" type="Control" parent="MarginContainer/SettingMenuScreen/Outline/MarginContainer3/VBoxContainer"]
@@ -593,18 +593,18 @@ custom_minimum_size = Vector2(492, 60)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 0
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_s15l1")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxTexture_1f22o")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_66tq8")
-theme_override_styles/hover = SubResource("StyleBoxTexture_66tq8")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_66tq8")
 theme_override_styles/normal = SubResource("StyleBoxTexture_1f22o")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_66tq8")
+theme_override_styles/hover = SubResource("StyleBoxTexture_66tq8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_66tq8")
+theme_override_styles/focus = SubResource("StyleBoxTexture_1f22o")
 text = "Back"
 
 [node name="Setting_VideoMenu_MenuScreen" type="MarginContainer" parent="MarginContainer"]
@@ -733,14 +733,15 @@ custom_minimum_size = Vector2(160, 41)
 layout_mode = 2
 theme_override_colors/font_color = Color(1, 1, 1, 1)
 theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxTexture_hxf1l")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_hxf1l")
-theme_override_styles/hover = SubResource("StyleBoxTexture_hxf1l")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_hxf1l")
 theme_override_styles/normal = SubResource("StyleBoxTexture_hxf1l")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_hxf1l")
+theme_override_styles/hover = SubResource("StyleBoxTexture_hxf1l")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_hxf1l")
+theme_override_styles/focus = SubResource("StyleBoxTexture_hxf1l")
 selected = 0
 item_count = 3
 popup/item_0/text = " Borderless"
+popup/item_0/id = 0
 popup/item_1/text = " Windowed"
 popup/item_1/id = 1
 popup/item_2/text = " Fullscreen"
@@ -797,18 +798,18 @@ custom_minimum_size = Vector2(30, 40)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_s15l1")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxTexture_kawae")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_1pxlg")
-theme_override_styles/hover = SubResource("StyleBoxTexture_ydgxs")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_1pxlg")
 theme_override_styles/normal = SubResource("StyleBoxTexture_kawae")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_1pxlg")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ydgxs")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_1pxlg")
+theme_override_styles/focus = SubResource("StyleBoxTexture_kawae")
 
 [node name="Setting_AudioMenu_MenuScreen" type="MarginContainer" parent="MarginContainer"]
 visible = false
@@ -921,11 +922,11 @@ layout_mode = 2
 [node name="Button" type="Button" parent="MarginContainer/Setting_AudioMenu_MenuScreen/Outline/MarginContainer3/VBoxContainer/VBoxContainer2/HBoxContainer"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
-theme_override_styles/focus = SubResource("StyleBoxTexture_17fcg")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_2h4w7")
-theme_override_styles/hover = SubResource("StyleBoxTexture_vflj8")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_2h4w7")
 theme_override_styles/normal = SubResource("StyleBoxTexture_vflj8")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_2h4w7")
+theme_override_styles/hover = SubResource("StyleBoxTexture_vflj8")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_2h4w7")
+theme_override_styles/focus = SubResource("StyleBoxTexture_17fcg")
 toggle_mode = true
 action_mode = 0
 
@@ -954,11 +955,11 @@ layout_mode = 2
 [node name="Button" type="Button" parent="MarginContainer/Setting_AudioMenu_MenuScreen/Outline/MarginContainer3/VBoxContainer/VBoxContainer2/HBoxContainer2"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
-theme_override_styles/focus = SubResource("StyleBoxTexture_0iwg8")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_82k6d")
-theme_override_styles/hover = SubResource("StyleBoxTexture_0bp4r")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_82k6d")
 theme_override_styles/normal = SubResource("StyleBoxTexture_0bp4r")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_82k6d")
+theme_override_styles/hover = SubResource("StyleBoxTexture_0bp4r")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_82k6d")
+theme_override_styles/focus = SubResource("StyleBoxTexture_0iwg8")
 toggle_mode = true
 action_mode = 0
 
@@ -987,11 +988,11 @@ layout_mode = 2
 [node name="Button" type="Button" parent="MarginContainer/Setting_AudioMenu_MenuScreen/Outline/MarginContainer3/VBoxContainer/VBoxContainer2/HBoxContainer3"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
-theme_override_styles/focus = SubResource("StyleBoxTexture_rv68b")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_thmxr")
-theme_override_styles/hover = SubResource("StyleBoxTexture_14m6q")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_thmxr")
 theme_override_styles/normal = SubResource("StyleBoxTexture_14m6q")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_thmxr")
+theme_override_styles/hover = SubResource("StyleBoxTexture_14m6q")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_thmxr")
+theme_override_styles/focus = SubResource("StyleBoxTexture_rv68b")
 toggle_mode = true
 action_mode = 0
 
@@ -1020,11 +1021,11 @@ layout_mode = 2
 [node name="Button" type="Button" parent="MarginContainer/Setting_AudioMenu_MenuScreen/Outline/MarginContainer3/VBoxContainer/VBoxContainer2/HBoxContainer4"]
 custom_minimum_size = Vector2(40, 40)
 layout_mode = 2
-theme_override_styles/focus = SubResource("StyleBoxTexture_17fcg")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_powr4")
-theme_override_styles/hover = SubResource("StyleBoxTexture_tses6")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_powr4")
 theme_override_styles/normal = SubResource("StyleBoxTexture_tses6")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_powr4")
+theme_override_styles/hover = SubResource("StyleBoxTexture_tses6")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_powr4")
+theme_override_styles/focus = SubResource("StyleBoxTexture_17fcg")
 toggle_mode = true
 action_mode = 0
 
@@ -1049,18 +1050,18 @@ custom_minimum_size = Vector2(30, 40)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_s15l1")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxTexture_kawae")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_1pxlg")
-theme_override_styles/hover = SubResource("StyleBoxTexture_ydgxs")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_1pxlg")
 theme_override_styles/normal = SubResource("StyleBoxTexture_kawae")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_1pxlg")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ydgxs")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_1pxlg")
+theme_override_styles/focus = SubResource("StyleBoxTexture_kawae")
 
 [node name="Setting_ControllMenu_MenuScreen" type="MarginContainer" parent="MarginContainer"]
 visible = false
@@ -1177,10 +1178,10 @@ size_flags_vertical = 4
 z_index = 4
 custom_minimum_size = Vector2(350, 350)
 layout_mode = 2
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_kfl2p")
 theme_override_styles/normal = SubResource("StyleBoxTexture_fp74a")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kfl2p")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Setting_ControllMenu_MenuScreen/Outline/MarginContainer3/VBoxContainer/HBoxContainer/KeyboardButton"]
 layout_mode = 1
@@ -1208,10 +1209,10 @@ layout_mode = 2
 z_index = 4
 custom_minimum_size = Vector2(350, 350)
 layout_mode = 2
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_kfl2p")
 theme_override_styles/normal = SubResource("StyleBoxTexture_fp74a")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kfl2p")
 
 [node name="MarginContainer" type="MarginContainer" parent="MarginContainer/Setting_ControllMenu_MenuScreen/Outline/MarginContainer3/VBoxContainer/HBoxContainer/ControllerButton"]
 layout_mode = 1
@@ -1237,18 +1238,18 @@ custom_minimum_size = Vector2(30, 40)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_s15l1")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxTexture_kawae")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_1pxlg")
-theme_override_styles/hover = SubResource("StyleBoxTexture_ydgxs")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_1pxlg")
 theme_override_styles/normal = SubResource("StyleBoxTexture_kawae")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_1pxlg")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ydgxs")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_1pxlg")
+theme_override_styles/focus = SubResource("StyleBoxTexture_kawae")
 
 [node name="Setting_ControllMenu_Controller_MenuScreen2" type="MarginContainer" parent="MarginContainer"]
 visible = false
@@ -1364,17 +1365,17 @@ layout_mode = 2
 z_index = 4
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
-theme_override_styles/focus = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_kfl2p")
 theme_override_styles/normal = SubResource("StyleBoxTexture_fp74a")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/focus = SubResource("StyleBoxTexture_kfl2p")
 text = "Nintendo Switch"
 
 [node name="Control" type="Control" parent="MarginContainer/Setting_ControllMenu_Controller_MenuScreen2/Outline/MarginContainer3/VBoxContainer/VBoxContainer/HBoxContainer/HBoxContainer2"]
@@ -1385,17 +1386,17 @@ layout_mode = 2
 z_index = 4
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
-theme_override_styles/focus = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_kfl2p")
 theme_override_styles/normal = SubResource("StyleBoxTexture_fp74a")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/focus = SubResource("StyleBoxTexture_kfl2p")
 text = "Playstation"
 
 [node name="Control2" type="Control" parent="MarginContainer/Setting_ControllMenu_Controller_MenuScreen2/Outline/MarginContainer3/VBoxContainer/VBoxContainer/HBoxContainer/HBoxContainer2"]
@@ -1406,17 +1407,17 @@ layout_mode = 2
 z_index = 4
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
-theme_override_styles/focus = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_kfl2p")
 theme_override_styles/normal = SubResource("StyleBoxTexture_fp74a")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/focus = SubResource("StyleBoxTexture_kfl2p")
 text = "Xbox"
 
 [node name="Control3" type="Control" parent="MarginContainer/Setting_ControllMenu_Controller_MenuScreen2/Outline/MarginContainer3/VBoxContainer/VBoxContainer/HBoxContainer/HBoxContainer2"]
@@ -1427,17 +1428,17 @@ layout_mode = 2
 z_index = 4
 custom_minimum_size = Vector2(200, 50)
 layout_mode = 2
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
-theme_override_styles/focus = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_kfl2p")
 theme_override_styles/normal = SubResource("StyleBoxTexture_fp74a")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/focus = SubResource("StyleBoxTexture_kfl2p")
 text = "Steam"
 
 [node name="Control" type="Control" parent="MarginContainer/Setting_ControllMenu_Controller_MenuScreen2/Outline/MarginContainer3/VBoxContainer/VBoxContainer"]
@@ -1459,18 +1460,18 @@ custom_minimum_size = Vector2(30, 40)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_s15l1")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxTexture_kawae")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_1pxlg")
-theme_override_styles/hover = SubResource("StyleBoxTexture_ydgxs")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_1pxlg")
 theme_override_styles/normal = SubResource("StyleBoxTexture_kawae")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_1pxlg")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ydgxs")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_1pxlg")
+theme_override_styles/focus = SubResource("StyleBoxTexture_kawae")
 
 [node name="Setting_ControllMenu_Keyboard_MenuScreen3" type="MarginContainer" parent="MarginContainer"]
 visible = false
@@ -1486,7 +1487,7 @@ patch_margin_right = 14
 patch_margin_bottom = 14
 
 [node name="ColorRect" type="ColorRect" parent="MarginContainer/Setting_ControllMenu_Keyboard_MenuScreen3/Outline"]
-layout_mode = 2
+layout_mode = 0
 offset_left = 14.0
 offset_top = 14.0
 offset_right = 1138.0
@@ -1595,14 +1596,14 @@ layout_mode = 2
 z_index = 4
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
-theme_override_styles/focus = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_kfl2p")
 theme_override_styles/normal = SubResource("StyleBoxTexture_fp74a")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/focus = SubResource("StyleBoxTexture_kfl2p")
 text = "W"
 
 [node name="Control" type="Control" parent="MarginContainer/Setting_ControllMenu_Keyboard_MenuScreen3/Outline/MarginContainer3/VBoxContainer/ActionList/VBoxContainer/HBoxContainer"]
@@ -1625,14 +1626,14 @@ layout_mode = 2
 z_index = 4
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
-theme_override_styles/focus = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_kfl2p")
 theme_override_styles/normal = SubResource("StyleBoxTexture_fp74a")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/focus = SubResource("StyleBoxTexture_kfl2p")
 text = "S"
 
 [node name="Control" type="Control" parent="MarginContainer/Setting_ControllMenu_Keyboard_MenuScreen3/Outline/MarginContainer3/VBoxContainer/ActionList/VBoxContainer/HBoxContainer2"]
@@ -1656,14 +1657,14 @@ layout_mode = 2
 z_index = 4
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
-theme_override_styles/focus = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_kfl2p")
 theme_override_styles/normal = SubResource("StyleBoxTexture_fp74a")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/focus = SubResource("StyleBoxTexture_kfl2p")
 text = "A"
 
 [node name="Control" type="Control" parent="MarginContainer/Setting_ControllMenu_Keyboard_MenuScreen3/Outline/MarginContainer3/VBoxContainer/ActionList/VBoxContainer/HBoxContainer3"]
@@ -1686,14 +1687,14 @@ layout_mode = 2
 z_index = 4
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
-theme_override_styles/focus = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_kfl2p")
 theme_override_styles/normal = SubResource("StyleBoxTexture_fp74a")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/focus = SubResource("StyleBoxTexture_kfl2p")
 text = "D"
 
 [node name="Control" type="Control" parent="MarginContainer/Setting_ControllMenu_Keyboard_MenuScreen3/Outline/MarginContainer3/VBoxContainer/ActionList/VBoxContainer/HBoxContainer4"]
@@ -1716,14 +1717,14 @@ layout_mode = 2
 z_index = 4
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
-theme_override_styles/focus = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_kfl2p")
 theme_override_styles/normal = SubResource("StyleBoxTexture_fp74a")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/focus = SubResource("StyleBoxTexture_kfl2p")
 text = "LMB"
 
 [node name="Control" type="Control" parent="MarginContainer/Setting_ControllMenu_Keyboard_MenuScreen3/Outline/MarginContainer3/VBoxContainer/ActionList/VBoxContainer/HBoxContainer5"]
@@ -1749,14 +1750,14 @@ layout_mode = 2
 z_index = 4
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
-theme_override_styles/focus = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_kfl2p")
 theme_override_styles/normal = SubResource("StyleBoxTexture_fp74a")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/focus = SubResource("StyleBoxTexture_kfl2p")
 text = "RMB"
 
 [node name="Control" type="Control" parent="MarginContainer/Setting_ControllMenu_Keyboard_MenuScreen3/Outline/MarginContainer3/VBoxContainer/ActionList/VBoxContainer2/HBoxContainer"]
@@ -1780,14 +1781,14 @@ layout_mode = 2
 z_index = 4
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
-theme_override_styles/focus = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_kfl2p")
 theme_override_styles/normal = SubResource("StyleBoxTexture_fp74a")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/focus = SubResource("StyleBoxTexture_kfl2p")
 text = "Q"
 
 [node name="Control" type="Control" parent="MarginContainer/Setting_ControllMenu_Keyboard_MenuScreen3/Outline/MarginContainer3/VBoxContainer/ActionList/VBoxContainer2/HBoxContainer2"]
@@ -1810,14 +1811,14 @@ layout_mode = 2
 z_index = 4
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
-theme_override_styles/focus = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_kfl2p")
 theme_override_styles/normal = SubResource("StyleBoxTexture_fp74a")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/focus = SubResource("StyleBoxTexture_kfl2p")
 text = "E"
 
 [node name="Control" type="Control" parent="MarginContainer/Setting_ControllMenu_Keyboard_MenuScreen3/Outline/MarginContainer3/VBoxContainer/ActionList/VBoxContainer2/HBoxContainer3"]
@@ -1840,14 +1841,14 @@ layout_mode = 2
 z_index = 4
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
-theme_override_styles/focus = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_kfl2p")
 theme_override_styles/normal = SubResource("StyleBoxTexture_fp74a")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/focus = SubResource("StyleBoxTexture_kfl2p")
 text = "Test"
 
 [node name="Control" type="Control" parent="MarginContainer/Setting_ControllMenu_Keyboard_MenuScreen3/Outline/MarginContainer3/VBoxContainer/ActionList/VBoxContainer2/HBoxContainer4"]
@@ -1870,14 +1871,14 @@ layout_mode = 2
 z_index = 4
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
-theme_override_styles/focus = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_kfl2p")
 theme_override_styles/normal = SubResource("StyleBoxTexture_fp74a")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/focus = SubResource("StyleBoxTexture_kfl2p")
 text = "Enter"
 
 [node name="Control" type="Control" parent="MarginContainer/Setting_ControllMenu_Keyboard_MenuScreen3/Outline/MarginContainer3/VBoxContainer/ActionList/VBoxContainer2/HBoxContainer5"]
@@ -1903,14 +1904,14 @@ layout_mode = 2
 z_index = 4
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
-theme_override_styles/focus = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_kfl2p")
 theme_override_styles/normal = SubResource("StyleBoxTexture_fp74a")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/focus = SubResource("StyleBoxTexture_kfl2p")
 text = "ESC"
 
 [node name="Control" type="Control" parent="MarginContainer/Setting_ControllMenu_Keyboard_MenuScreen3/Outline/MarginContainer3/VBoxContainer/ActionList/VBoxContainer3/HBoxContainer"]
@@ -1934,14 +1935,14 @@ layout_mode = 2
 z_index = 4
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
-theme_override_styles/focus = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_kfl2p")
 theme_override_styles/normal = SubResource("StyleBoxTexture_fp74a")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/focus = SubResource("StyleBoxTexture_kfl2p")
 text = "1"
 
 [node name="Control" type="Control" parent="MarginContainer/Setting_ControllMenu_Keyboard_MenuScreen3/Outline/MarginContainer3/VBoxContainer/ActionList/VBoxContainer3/HBoxContainer2"]
@@ -1964,14 +1965,14 @@ layout_mode = 2
 z_index = 4
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
-theme_override_styles/focus = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_kfl2p")
 theme_override_styles/normal = SubResource("StyleBoxTexture_fp74a")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/focus = SubResource("StyleBoxTexture_kfl2p")
 text = "2"
 
 [node name="Control" type="Control" parent="MarginContainer/Setting_ControllMenu_Keyboard_MenuScreen3/Outline/MarginContainer3/VBoxContainer/ActionList/VBoxContainer3/HBoxContainer3"]
@@ -1994,14 +1995,14 @@ layout_mode = 2
 z_index = 4
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
-theme_override_styles/focus = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_kfl2p")
 theme_override_styles/normal = SubResource("StyleBoxTexture_fp74a")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/focus = SubResource("StyleBoxTexture_kfl2p")
 text = "3"
 
 [node name="Control" type="Control" parent="MarginContainer/Setting_ControllMenu_Keyboard_MenuScreen3/Outline/MarginContainer3/VBoxContainer/ActionList/VBoxContainer3/HBoxContainer4"]
@@ -2024,14 +2025,14 @@ layout_mode = 2
 z_index = 4
 custom_minimum_size = Vector2(70, 70)
 layout_mode = 2
-theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 28
-theme_override_styles/focus = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/hover = SubResource("StyleBoxTexture_kfl2p")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_kfl2p")
 theme_override_styles/normal = SubResource("StyleBoxTexture_fp74a")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/hover = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_kfl2p")
+theme_override_styles/focus = SubResource("StyleBoxTexture_kfl2p")
 text = "4"
 
 [node name="Control" type="Control" parent="MarginContainer/Setting_ControllMenu_Keyboard_MenuScreen3/Outline/MarginContainer3/VBoxContainer/ActionList/VBoxContainer3/HBoxContainer5"]
@@ -2049,18 +2050,18 @@ custom_minimum_size = Vector2(30, 40)
 layout_mode = 2
 size_flags_horizontal = 0
 size_flags_vertical = 0
-theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
-theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
-theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
 theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_focus_color = Color(1, 1, 1, 1)
+theme_override_colors/font_pressed_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(1, 1, 1, 1)
+theme_override_colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 theme_override_fonts/font = ExtResource("4_s15l1")
 theme_override_font_sizes/font_size = 36
-theme_override_styles/focus = SubResource("StyleBoxTexture_kawae")
-theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_1pxlg")
-theme_override_styles/hover = SubResource("StyleBoxTexture_ydgxs")
-theme_override_styles/pressed = SubResource("StyleBoxTexture_1pxlg")
 theme_override_styles/normal = SubResource("StyleBoxTexture_kawae")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_1pxlg")
+theme_override_styles/hover = SubResource("StyleBoxTexture_ydgxs")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_1pxlg")
+theme_override_styles/focus = SubResource("StyleBoxTexture_kawae")
 
 [connection signal="pressed" from="MarginContainer/StartingScreen/Outline/MarginContainer3/VBoxContainer/StartGameButton" to="MarginContainer" method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="MarginContainer/StartingScreen/Outline/MarginContainer3/VBoxContainer/SettingsButton" to="MarginContainer" method="_on_settings_button_pressed"]
