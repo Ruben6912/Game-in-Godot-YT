@@ -1,0 +1,63 @@
+[gd_scene load_steps=6 format=3 uid="uid://mjgdhh8w1dk"]
+
+[ext_resource type="Texture2D" uid="uid://bgvaypc5xds40" path="res://UI/Healthbar/healthbarRound90to280Outline.png" id="1_ojvyb"]
+[ext_resource type="Texture2D" uid="uid://b2lfjdglxi820" path="res://UI/Healthbar/healthbarRound90to280FillLive.png" id="2_e1fvc"]
+[ext_resource type="Texture2D" uid="uid://dwtx1g7t7lbrc" path="res://UI/Healthbar/healthbarOutline.png" id="3_m4kqb"]
+[ext_resource type="Texture2D" uid="uid://dpvgoifp8fcoy" path="res://UI/Healthbar/healthbarInnerLive.png" id="4_0mh2i"]
+[ext_resource type="Texture2D" uid="uid://biyl7y2xcirbv" path="res://UI/Healthbar/healthbarLoseLive.png" id="5_glyhw"]
+
+[node name="PlayerUI" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HealthBarRound" type="TextureProgressBar" parent="."]
+custom_minimum_size = Vector2(240, 10)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+min_value = 1.0
+value = 100.0
+fill_mode = 5
+radial_initial_angle = 90.0
+radial_fill_degrees = 270.0
+texture_over = ExtResource("1_ojvyb")
+texture_progress = ExtResource("2_e1fvc")
+
+[node name="DamageBarRound" type="TextureProgressBar" parent="HealthBarRound"]
+custom_minimum_size = Vector2(5, 5)
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+fill_mode = 5
+radial_initial_angle = 90.0
+radial_fill_degrees = 270.0
+
+[node name="HealthBarRoundStraight" type="TextureProgressBar" parent="."]
+layout_mode = 0
+offset_right = 64.0
+offset_bottom = 40.0
+value = 34.0
+texture_over = ExtResource("3_m4kqb")
+texture_progress = ExtResource("4_0mh2i")
+
+[node name="HealthBarRoundStraight" type="TextureProgressBar" parent="HealthBarRoundStraight"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+value = 18.0
+texture_over = ExtResource("3_m4kqb")
+texture_progress = ExtResource("5_glyhw")

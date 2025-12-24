@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bkwfcy5bv0s4x" path="res://Objects/Player.tscn" id="2_rddr7"]
 [ext_resource type="Script" uid="uid://c0hatcpcxag65" path="res://Scripts/Obstacle.gd" id="3_34jld"]
 [ext_resource type="Resource" uid="uid://bij7yao3iy6k6" path="res://Resources/Entity_data.tres" id="5_amgit"]
-[ext_resource type="PackedScene" uid="uid://dpreqsbjbi0ew" path="res://Scenes/PauseMenu.tscn" id="7_mma61"]
+[ext_resource type="PackedScene" uid="uid://dpreqsbjbi0ew" path="res://Scenes/UIScenes/PauseMenu.tscn" id="7_mma61"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kuy1g"]
 size = Vector2(128, 128)

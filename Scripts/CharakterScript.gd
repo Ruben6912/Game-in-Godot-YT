@@ -38,7 +38,7 @@ func set_state(new_state: CharState) -> void:
 # ============================================================
 # === MAIN MOVEMENT LOOP =====================================
 # ============================================================
-func _physics_process(delta: float) -> void:
+func _physics_process(_delta: float) -> void:
 	# Don't process movement if the game is paused
 	if PauseManager.is_paused:
 		return

@@ -6,8 +6,8 @@
 script = ExtResource("1_b2y7a")
 steam_user_name = "Ruben"
 character_team_id = "player"
-max_health = 10
-health = 10
+max_health = 30
+health = 30
 speed = 100.0
 dashSpeed = 200.0
 can_pause = true
