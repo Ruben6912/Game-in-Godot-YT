@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://biyl7y2xcirbv"
-path="res://.godot/imported/healthbarLoseLive.png-387d37f15ca7abd886c51354fc806a9c.ctex"
+uid="uid://b4qs567nk33qs"
+path="res://.godot/imported/healthbarRound90to280FillLoseLive.png-ecf2f8a036fe27ebb47425b0e4b584c4.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://UI/Healthbar/healthbarLoseLive.png"
-dest_files=["res://.godot/imported/healthbarLoseLive.png-387d37f15ca7abd886c51354fc806a9c.ctex"]
+source_file="res://UI/assets/Healthbar/healthbarRound90to280FillLoseLive.png"
+dest_files=["res://.godot/imported/healthbarRound90to280FillLoseLive.png-ecf2f8a036fe27ebb47425b0e4b584c4.ctex"]
 
 [params]
 

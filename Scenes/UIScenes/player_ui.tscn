@@ -1,38 +1,106 @@
-[gd_scene load_steps=6 format=3 uid="uid://mjgdhh8w1dk"]
+[gd_scene load_steps=17 format=3 uid="uid://mjgdhh8w1dk"]
 
-[ext_resource type="Texture2D" uid="uid://bgvaypc5xds40" path="res://UI/Healthbar/healthbarRound90to280Outline.png" id="1_ojvyb"]
-[ext_resource type="Texture2D" uid="uid://b2lfjdglxi820" path="res://UI/Healthbar/healthbarRound90to280FillLive.png" id="2_e1fvc"]
-[ext_resource type="Texture2D" uid="uid://dwtx1g7t7lbrc" path="res://UI/Healthbar/healthbarOutline.png" id="3_m4kqb"]
-[ext_resource type="Texture2D" uid="uid://dpvgoifp8fcoy" path="res://UI/Healthbar/healthbarInnerLive.png" id="4_0mh2i"]
-[ext_resource type="Texture2D" uid="uid://biyl7y2xcirbv" path="res://UI/Healthbar/healthbarLoseLive.png" id="5_glyhw"]
+[ext_resource type="Texture2D" uid="uid://bgucemrcyyk2l" path="res://UI/assets/Healthbar/healthbarRound90to280Background.png" id="1_0mh2i"]
+[ext_resource type="Texture2D" uid="uid://bgvaypc5xds40" path="res://UI/assets/Healthbar/healthbarRound90to280Outline.png" id="1_ojvyb"]
+[ext_resource type="Texture2D" uid="uid://b2lfjdglxi820" path="res://UI/assets/Healthbar/healthbarRound90to280FillLive.png" id="2_e1fvc"]
+[ext_resource type="Texture2D" uid="uid://dwtx1g7t7lbrc" path="res://UI/assets/Healthbar/healthbarOutline.png" id="3_m4kqb"]
+[ext_resource type="Texture2D" uid="uid://dpvgoifp8fcoy" path="res://UI/assets/Healthbar/healthbarInnerLive.png" id="4_0mh2i"]
+[ext_resource type="Texture2D" uid="uid://b4qs567nk33qs" path="res://UI/assets/Healthbar/healthbarRound90to280FillLoseLive.png" id="4_glyhw"]
+[ext_resource type="Texture2D" uid="uid://36n8mu1cv4g6" path="res://UI/assets/Healthbar/healthbarBackground.png" id="5_cilq5"]
+[ext_resource type="Texture2D" uid="uid://biyl7y2xcirbv" path="res://UI/assets/Healthbar/healthbarLoseLive.png" id="5_glyhw"]
+[ext_resource type="Texture2D" uid="uid://cqn8pfdvhhwp1" path="res://Assets/icon.svg" id="9_cilq5"]
+[ext_resource type="Texture2D" uid="uid://bhrw6ob5kkjqu" path="res://Assets/Test_assets/Test bean.png" id="10_vjcnp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2d7qk"]
+atlas = ExtResource("10_vjcnp")
+region = Rect2(64, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_pshh7"]
+atlas = ExtResource("10_vjcnp")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mp7a3"]
+atlas = ExtResource("10_vjcnp")
+region = Rect2(48, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8jrp0"]
+atlas = ExtResource("10_vjcnp")
+region = Rect2(16, 0, 16, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2plbe"]
+atlas = ExtResource("10_vjcnp")
+region = Rect2(0, 0, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_f873d"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2d7qk")
+}],
+"loop": true,
+"name": &"Dash",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_pshh7")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_mp7a3")
+}],
+"loop": true,
+"name": &"Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8jrp0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2plbe")
+}],
+"loop": true,
+"name": &"Run",
+"speed": 5.0
+}]
 
 [node name="PlayerUI" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 7.0
+offset_top = 1.0
+offset_right = 7.0
+offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="HealthBarRound" type="TextureProgressBar" parent="."]
+[node name="HealthBar" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HealthBarRound" type="TextureProgressBar" parent="HealthBar"]
+z_index = 3
 custom_minimum_size = Vector2(240, 10)
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 240.0
+offset_bottom = 64.0
+scale = Vector2(1.5, 1.5)
 size_flags_horizontal = 4
 size_flags_vertical = 4
-min_value = 1.0
-value = 100.0
+max_value = 40.0
+value = 40.0
 fill_mode = 5
 radial_initial_angle = 90.0
 radial_fill_degrees = 270.0
+texture_under = ExtResource("1_0mh2i")
 texture_over = ExtResource("1_ojvyb")
 texture_progress = ExtResource("2_e1fvc")
 
-[node name="DamageBarRound" type="TextureProgressBar" parent="HealthBarRound"]
+[node name="DamageBarRound" type="TextureProgressBar" parent="HealthBar/HealthBarRound"]
+visible = false
 custom_minimum_size = Vector2(5, 5)
 layout_mode = 1
 anchors_preset = 15
@@ -42,22 +110,172 @@ grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+max_value = 40.0
+value = 16.0
 fill_mode = 5
 radial_initial_angle = 90.0
 radial_fill_degrees = 270.0
+texture_over = ExtResource("1_ojvyb")
+texture_progress = ExtResource("4_glyhw")
 
-[node name="HealthBarRoundStraight" type="TextureProgressBar" parent="."]
+[node name="IgnoreBar" type="TextureProgressBar" parent="HealthBar/HealthBarRound"]
 layout_mode = 0
-offset_right = 64.0
-offset_bottom = 40.0
-value = 34.0
+offset_left = 64.00001
+offset_right = 128.0
+offset_bottom = 64.0
+rotation = 1.5707964
+texture_over = ExtResource("1_ojvyb")
+
+[node name="HealthBarRoundStraight" type="TextureProgressBar" parent="HealthBar"]
+z_index = 3
+layout_mode = 0
+offset_left = 48.0
+offset_top = 81.0
+offset_right = 112.655
+offset_bottom = 91.32
+scale = Vector2(2.5, 1.5)
+min_value = 40.0
+value = 76.0
+texture_under = ExtResource("5_cilq5")
 texture_over = ExtResource("3_m4kqb")
 texture_progress = ExtResource("4_0mh2i")
 
-[node name="HealthBarRoundStraight" type="TextureProgressBar" parent="HealthBarRoundStraight"]
+[node name="HealthBarRoundStraight" type="TextureProgressBar" parent="HealthBar/HealthBarRoundStraight"]
+visible = false
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
-value = 18.0
+offset_right = 64.0
+offset_bottom = 10.666672
+min_value = 40.0
+value = 63.0
 texture_over = ExtResource("3_m4kqb")
 texture_progress = ExtResource("5_glyhw")
+
+[node name="Label" type="Label" parent="HealthBar"]
+z_index = 9
+layout_mode = 1
+anchors_preset = -1
+offset_left = 94.0
+offset_top = 80.0
+offset_right = 133.0
+offset_bottom = 102.0
+scale = Vector2(1, 0.7599951)
+theme_override_font_sizes/font_size = 19
+text = "70/100"
+
+[node name="ManaBar" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="ManaBarStraight" type="TextureProgressBar" parent="ManaBar"]
+layout_mode = 0
+offset_left = 48.0
+offset_top = 96.0
+offset_right = 203.0
+offset_bottom = 136.0
+scale = Vector2(2.5, 0.5)
+value = 37.0
+texture_under = ExtResource("5_cilq5")
+texture_over = ExtResource("3_m4kqb")
+texture_progress = ExtResource("4_0mh2i")
+
+[node name="Background" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 15.0
+offset_top = 15.0
+offset_right = 51.666668
+offset_bottom = 81.0
+scale = Vector2(1.8, 1)
+
+[node name="ColorRect" type="ColorRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect2" type="ColorRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 36.111115
+offset_top = 18.0
+offset_right = 68.33333
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="ColorRect4" type="ColorRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 44.444447
+offset_top = 18.0
+offset_right = 68.8889
+offset_bottom = -46.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect5" type="ColorRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 82.22222
+offset_top = 19.0
+offset_right = 93.39345
+offset_bottom = -45.0
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5707964
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect6" type="ColorRect" parent="Background"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 105.10932
+offset_top = 19.684036
+offset_right = 115.484055
+offset_bottom = -44.7642
+grow_horizontal = 2
+grow_vertical = 2
+rotation = 1.5707964
+color = Color(0, 0, 0, 1)
+
+[node name="Weapon" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Icon" type="Sprite2D" parent="Weapon"]
+position = Vector2(126.99999, 59.000008)
+scale = Vector2(0.43750012, 0.2890625)
+texture = ExtResource("9_cilq5")
+
+[node name="Ability" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Icon" type="Sprite2D" parent="Ability"]
+position = Vector2(182, 59)
+scale = Vector2(0.24218756, 0.22792053)
+texture = ExtResource("9_cilq5")
+
+[node name="Player" type="Control" parent="."]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Player"]
+z_index = 6
+position = Vector2(48.000004, 42.5)
+scale = Vector2(3.125, 3.4375)
+sprite_frames = SubResource("SpriteFrames_f873d")
+animation = &"Idle"
+autoplay = "Idle"
