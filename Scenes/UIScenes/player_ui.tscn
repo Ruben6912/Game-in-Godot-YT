@@ -1,15 +1,26 @@
-[gd_scene load_steps=17 format=3 uid="uid://mjgdhh8w1dk"]
+[gd_scene load_steps=22 format=3 uid="uid://mjgdhh8w1dk"]
 
-[ext_resource type="Texture2D" uid="uid://bgucemrcyyk2l" path="res://UI/assets/Healthbar/healthbarRound90to280Background.png" id="1_0mh2i"]
-[ext_resource type="Texture2D" uid="uid://bgvaypc5xds40" path="res://UI/assets/Healthbar/healthbarRound90to280Outline.png" id="1_ojvyb"]
-[ext_resource type="Texture2D" uid="uid://b2lfjdglxi820" path="res://UI/assets/Healthbar/healthbarRound90to280FillLive.png" id="2_e1fvc"]
-[ext_resource type="Texture2D" uid="uid://dwtx1g7t7lbrc" path="res://UI/assets/Healthbar/healthbarOutline.png" id="3_m4kqb"]
-[ext_resource type="Texture2D" uid="uid://dpvgoifp8fcoy" path="res://UI/assets/Healthbar/healthbarInnerLive.png" id="4_0mh2i"]
-[ext_resource type="Texture2D" uid="uid://b4qs567nk33qs" path="res://UI/assets/Healthbar/healthbarRound90to280FillLoseLive.png" id="4_glyhw"]
-[ext_resource type="Texture2D" uid="uid://36n8mu1cv4g6" path="res://UI/assets/Healthbar/healthbarBackground.png" id="5_cilq5"]
-[ext_resource type="Texture2D" uid="uid://biyl7y2xcirbv" path="res://UI/assets/Healthbar/healthbarLoseLive.png" id="5_glyhw"]
+[ext_resource type="Script" uid="uid://btpdpyhmuxvsf" path="res://Scenes/UIScenes/playerHealthbar.gd" id="1_vjcnp"]
+[ext_resource type="Texture2D" uid="uid://d38e7i7eokx7k" path="res://UI/assets/Healthbar/HealthbarRound3of4InnerGreen.png" id="2_vjcnp"]
+[ext_resource type="Texture2D" uid="uid://3ot2yc77c6cs" path="res://UI/assets/Healthbar/HealthbarRound3of4InnerGrey.png" id="3_f873d"]
+[ext_resource type="Texture2D" uid="uid://41k3vie0xi0c" path="res://UI/assets/Healthbar/HealthbarRound3of4Outer.png" id="4_wqr6x"]
+[ext_resource type="Texture2D" uid="uid://guedunwjatft" path="res://UI/assets/Healthbar/HealthbarRound3of4InnerWhite.png" id="5_3mkjt"]
+[ext_resource type="Texture2D" uid="uid://c73gok8fptbd7" path="res://UI/assets/Healthbar/HealthbarStraightInnerGreen.png" id="6_6sxx7"]
+[ext_resource type="Texture2D" uid="uid://bt1evls7m5ucf" path="res://UI/assets/Healthbar/HealthbarRoundFullOuter.png" id="6_f873d"]
+[ext_resource type="Texture2D" uid="uid://c0vuegxchw1ak" path="res://UI/assets/Healthbar/HealthbarStraightInnerGrey.png" id="7_vt2ss"]
+[ext_resource type="Texture2D" uid="uid://vuhqg3fpbukq" path="res://UI/assets/Healthbar/HealthbarStraightOuter.png" id="8_y2feq"]
 [ext_resource type="Texture2D" uid="uid://cqn8pfdvhhwp1" path="res://Assets/icon.svg" id="9_cilq5"]
+[ext_resource type="Texture2D" uid="uid://bufbbpvsrjfry" path="res://UI/assets/Healthbar/HealthbarStraightInnerWhite.png" id="9_ty5aq"]
 [ext_resource type="Texture2D" uid="uid://bhrw6ob5kkjqu" path="res://Assets/Test_assets/Test bean.png" id="10_vjcnp"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_rc41a"]
+load_path = "res://.godot/imported/healthbarBackground.png-f0412cfe563b21a8efa9460965bbe86b.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_tqjal"]
+load_path = "res://.godot/imported/healthbarOutline.png-aaeb12ae6154851fd1111f12d27fe05d.ctex"
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_q0suv"]
+load_path = "res://.godot/imported/healthbarInnerLive.png-06019bc417125f2ae32bb912c1527050.ctex"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_2d7qk"]
 atlas = ExtResource("10_vjcnp")
@@ -64,30 +75,47 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="PlayerUI" type="Control"]
+[node name="PlayerHealthbar" type="Control" node_paths=PackedStringArray("health_bar_round", "damage_bar_round", "health_bar_straight", "damage_bar_straight")]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
-offset_left = 7.0
-offset_top = 1.0
-offset_right = 7.0
-offset_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_vjcnp")
+health_bar_round = NodePath("HealthBar/HealthBarRound/HealthBarRound")
+damage_bar_round = NodePath("HealthBar/HealthBarRound/DamageBarRound")
+health_bar_straight = NodePath("HealthBar/HealthBarStraight/HealthBarStraight")
+damage_bar_straight = NodePath("HealthBar/HealthBarStraight/DamageBarStraight")
 
 [node name="HealthBar" type="Control" parent="."]
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="HealthBarRound" type="TextureProgressBar" parent="HealthBar"]
+[node name="HealthShow" type="Label" parent="HealthBar"]
+z_index = 9
+layout_mode = 1
+anchors_preset = -1
+offset_left = 93.0
+offset_top = 79.0
+offset_right = 168.0
+offset_bottom = 119.0
+scale = Vector2(0.575, 0.437)
+theme_override_font_sizes/font_size = 37
+text = "70/100"
+
+[node name="HealthBarRound" type="Control" parent="HealthBar"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HealthBarRound" type="TextureProgressBar" parent="HealthBar/HealthBarRound"]
 z_index = 3
 custom_minimum_size = Vector2(240, 10)
 layout_mode = 1
 offset_right = 240.0
 offset_bottom = 64.0
-scale = Vector2(1.5, 1.5)
 size_flags_horizontal = 4
 size_flags_vertical = 4
 max_value = 40.0
@@ -95,74 +123,62 @@ value = 40.0
 fill_mode = 5
 radial_initial_angle = 90.0
 radial_fill_degrees = 270.0
-texture_under = ExtResource("1_0mh2i")
-texture_over = ExtResource("1_ojvyb")
-texture_progress = ExtResource("2_e1fvc")
+texture_progress = ExtResource("2_vjcnp")
 
 [node name="DamageBarRound" type="TextureProgressBar" parent="HealthBar/HealthBarRound"]
-visible = false
 custom_minimum_size = Vector2(5, 5)
 layout_mode = 1
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
+offset_right = 96.0
+offset_bottom = 96.0
 size_flags_horizontal = 4
 size_flags_vertical = 4
 max_value = 40.0
-value = 16.0
+value = 40.0
 fill_mode = 5
 radial_initial_angle = 90.0
 radial_fill_degrees = 270.0
-texture_over = ExtResource("1_ojvyb")
-texture_progress = ExtResource("4_glyhw")
+texture_under = ExtResource("3_f873d")
+texture_over = ExtResource("4_wqr6x")
+texture_progress = ExtResource("5_3mkjt")
 
 [node name="IgnoreBar" type="TextureProgressBar" parent="HealthBar/HealthBarRound"]
-layout_mode = 0
-offset_left = 64.00001
-offset_right = 128.0
-offset_bottom = 64.0
+layout_mode = 1
+offset_left = 96.0
+offset_right = 192.0
+offset_bottom = 96.0
 rotation = 1.5707964
-texture_over = ExtResource("1_ojvyb")
+texture_over = ExtResource("6_f873d")
 
-[node name="HealthBarRoundStraight" type="TextureProgressBar" parent="HealthBar"]
+[node name="HealthBarStraight" type="Control" parent="HealthBar"]
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="HealthBarStraight" type="TextureProgressBar" parent="HealthBar/HealthBarStraight"]
 z_index = 3
 layout_mode = 0
 offset_left = 48.0
-offset_top = 81.0
-offset_right = 112.655
-offset_bottom = 91.32
-scale = Vector2(2.5, 1.5)
+offset_top = 79.0
+offset_right = 208.0
+offset_bottom = 96.0
 min_value = 40.0
-value = 76.0
-texture_under = ExtResource("5_cilq5")
-texture_over = ExtResource("3_m4kqb")
-texture_progress = ExtResource("4_0mh2i")
+value = 100.0
+texture_progress = ExtResource("6_6sxx7")
 
-[node name="HealthBarRoundStraight" type="TextureProgressBar" parent="HealthBar/HealthBarRoundStraight"]
-visible = false
+[node name="DamageBarStraight" type="TextureProgressBar" parent="HealthBar/HealthBarStraight"]
 layout_mode = 0
-offset_right = 64.0
-offset_bottom = 10.666672
+offset_left = 48.0
+offset_top = 79.0
+offset_right = 208.0
+offset_bottom = 96.0
 min_value = 40.0
-value = 63.0
-texture_over = ExtResource("3_m4kqb")
-texture_progress = ExtResource("5_glyhw")
-
-[node name="Label" type="Label" parent="HealthBar"]
-z_index = 9
-layout_mode = 1
-anchors_preset = -1
-offset_left = 94.0
-offset_top = 80.0
-offset_right = 133.0
-offset_bottom = 102.0
-scale = Vector2(1, 0.7599951)
-theme_override_font_sizes/font_size = 19
-text = "70/100"
+value = 100.0
+texture_under = ExtResource("7_vt2ss")
+texture_over = ExtResource("8_y2feq")
+texture_progress = ExtResource("9_ty5aq")
 
 [node name="ManaBar" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -171,15 +187,16 @@ offset_bottom = 40.0
 layout_mode = 0
 offset_left = 48.0
 offset_top = 96.0
-offset_right = 203.0
-offset_bottom = 136.0
+offset_right = 112.8
+offset_bottom = 108.0
 scale = Vector2(2.5, 0.5)
 value = 37.0
-texture_under = ExtResource("5_cilq5")
-texture_over = ExtResource("3_m4kqb")
-texture_progress = ExtResource("4_0mh2i")
+texture_under = SubResource("CompressedTexture2D_rc41a")
+texture_over = SubResource("CompressedTexture2D_tqjal")
+texture_progress = SubResource("CompressedTexture2D_q0suv")
 
 [node name="Background" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_left = 15.0
 offset_top = 15.0
@@ -188,6 +205,7 @@ offset_bottom = 81.0
 scale = Vector2(1.8, 1)
 
 [node name="ColorRect" type="ColorRect" parent="Background"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -196,6 +214,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ColorRect2" type="ColorRect" parent="Background"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -207,6 +226,7 @@ grow_horizontal = 2
 grow_vertical = 2
 
 [node name="ColorRect4" type="ColorRect" parent="Background"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -220,6 +240,7 @@ grow_vertical = 2
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect5" type="ColorRect" parent="Background"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -234,6 +255,7 @@ rotation = 1.5707964
 color = Color(0, 0, 0, 1)
 
 [node name="ColorRect6" type="ColorRect" parent="Background"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -248,6 +270,7 @@ rotation = 1.5707964
 color = Color(0, 0, 0, 1)
 
 [node name="Weapon" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -258,6 +281,7 @@ scale = Vector2(0.43750012, 0.2890625)
 texture = ExtResource("9_cilq5")
 
 [node name="Ability" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
@@ -268,6 +292,7 @@ scale = Vector2(0.24218756, 0.22792053)
 texture = ExtResource("9_cilq5")
 
 [node name="Player" type="Control" parent="."]
+visible = false
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
